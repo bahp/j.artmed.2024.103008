@@ -96,6 +96,7 @@ body:
     label: Brief description of the data
     description: |
       A concise description of the data (see example)
+
       3969 patients admitted
       4582 blood culture episodes
 
@@ -104,7 +105,7 @@ body:
       train (70%): 4582, 3039, 940, 603
       val (20%): 1320, 852, 283, 185
       test (10%): 655, 428, 138, 89
-      (Table 1)
+      (see Table 1)
 
       period: 2011-2015
 
@@ -114,34 +115,14 @@ body:
 
 - type: textarea
   attributes:
-    label: Clinical variables
-    description: |
-      A concise description of the clinical variables used.
-        - **Total*: 28
-        - **Demographics**: 1
-        - **Vital Signs**: 4
-        - **Laboratory**: 22
-        - **Other**: 1
-    value: |
-        - Total:
-        - Demographics:
-        - Vital signs:
-        - Laboratory:
-        - Other:
-    render: markdown
-  validations:
-    required: false
-
-- type: textarea
-  attributes:
     label: Brief description of the clinical variables
     description: |
       Example:
         33 features x 48 timesteps (t=1h) (appendix B)
-        Demographics (1): Age
-        Vital Signs (4): BT, DBP, HR, RR, HR_STD, RR_STD, CORR_HR_RR
-        Laboratory (22): BUN, ALB, PLT, Chloride, Creatinine, Phosphorus, ALP, SO2, PCO2, SPO2, Glucose
-        Other (x):
+        - Demographics (1): Age
+        - Vital Signs (4): BT, DBP, HR, RR, HR_STD, RR_STD, CORR_HR_RR
+        - Laboratory (22): BUN, ALB, PLT, Chloride, Creatinine, Phosphorus, ALP, SO2, PCO2, SPO2, Glucose
+        - Other (x):
     placeholder: |
 
       Demographics (?) |
