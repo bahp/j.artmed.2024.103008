@@ -105,10 +105,12 @@ body:
       label: Data
       description: |
         A concise description of the datasets used.
-          - **Observation type**: episodes
-          - **Total**: 6557
-          - **Positive**: 877
-          - **Prevalence**: 13.38%
+
+        Example:
+        **Observation type**: episodes
+        **Total**: 6557
+        **Positive**: 877
+        **Prevalence**: 13.38%
       value: |
           - Observation type:
           - Total:
@@ -124,7 +126,7 @@ body:
       description: |
         A concise description of the data.
 
-        Example:
+        **Example:**
         period: 2011-2015
 
         3969 patients admitted
@@ -151,7 +153,7 @@ body:
         **Demographics (1)**: Age
         **Vital Signs (4)**: BT, DBP, HR, RR, HR_STD, RR_STD, CORR_HR_RR
         **Laboratory (22)**: BUN, ALB, PLT, Chloride, Creatinine, Phosphorus, ALP, SO2, PCO2, SPO2, Glucose,...
-          Other (0):
+        **Other (0):**
 
   - type: textarea
     attributes:
