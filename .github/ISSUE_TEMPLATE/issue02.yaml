@@ -84,7 +84,7 @@ body:
     attributes:
       label: Clinical setting
       description: |
-        A concise description of the clinical setting and inclusion criteria
+        A concise description of the clinical setting and inclusion criteria.
           - **Aim**: Prediction
           - **Condition(s)**: BSI
           - **Ward(s)**: ICU
@@ -146,11 +146,11 @@ body:
       label: Brief description of the clinical variables
       description: |
         Example:
-          33 features x 48 timesteps (t=1h) (appendix B)
+          Age + (26 features x 48 timesteps) (t=1h) (appendix B)
           Demographics (1): Age
           Vital Signs (4): BT, DBP, HR, RR, HR_STD, RR_STD, CORR_HR_RR
-          Laboratory (22): BUN, ALB, PLT, Chloride, Creatinine, Phosphorus, ALP, SO2, PCO2, SPO2, Glucose
-          Other (x):
+          Laboratory (22): BUN, ALB, PLT, Chloride, Creatinine, Phosphorus, ALP, SO2, PCO2, SPO2, Glucose,...
+          Other (0):
 
   - type: textarea
     attributes:
@@ -160,7 +160,11 @@ body:
         Outlier Removal: None
         Class Imbalance: RANDU, RANDO, SMOTE
         Missing inputation (M): M_MEDIAN, M_MEAN, FFILL, BFILL, M_MI, M_MASK
-        Feature Engineering (FE): FE_STATS, FE_DELTA, FE_DFT, FE_LR, FE_CATEGORY, FE_CRAFTED, FE_MASK
+        Feature Engineering (FE):
+          PaO2/FiO2 (FE_CRAFTED)
+          min, max, mean (FE_STATS)
+          time differences (FE_DELTA)
+          missing mask (FE_MASK)
     validations:
       required: false
 
