@@ -10,7 +10,6 @@ body:
         Thanks for taking the time to fill out this bug report!
 
   - type: input
-    id: contact
     attributes:
       label: Contact Details
       description: How can we get in touch with you if we need more info?
@@ -34,10 +33,11 @@ body:
       - label: I have had a look the existing manuscripts.
         required: true
 
-  - type: textarea
+  - type: input
     attributes:
-      label: Link
-      description: Link to the manuscript
+      label: Link to manuscript
+      description: Provide a link to the original manuscript.
+      placeholder: ex. http://xxxx.com/manuscript01
     validations:
       required: false
 
@@ -45,6 +45,27 @@ body:
     attributes:
       label: Brief description
       description: A concise description of the manuscript
+    validations:
+      required: false
+
+
+  - type: input
+    attributes:
+      placeholder: ex. 2022
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      placeholder: ex. http://xxxx.com/manuscript01
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Link to manuscript
+      description: Provide a link to the original manuscript.
+      placeholder: ex. http://xxxx.com/manuscript01
     validations:
       required: false
 
