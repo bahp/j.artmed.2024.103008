@@ -129,8 +129,6 @@ body:
       Laboratory (22) | BUN, ALB, PLT, Chloride, Creatinine, Phosphorus,
         ALP, SO2, PCO2, SPO2, Glucose, Potassium, Sodium, ALT, Magnesium,
         Lactate, WBC, BIL, Troponin Test, Calcium
-    validations:
-      required: false
 
 - type: textarea
   attributes:
