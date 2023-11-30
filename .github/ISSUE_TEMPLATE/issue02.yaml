@@ -106,13 +106,12 @@ body:
       description: |
         A concise description of the datasets used.
 
-        Example:
-        **Observation type**: episodes
-        **Total**: 6557
-        **Positive**: 877
-        **Prevalence**: 13.38%
+        - **Observation type**: episodes, patients, ...
+        - **Total**: 6557
+        - **Positive**: 877
+        - **Prevalence**: 13.38%
       value: |
-          Observation type:
+          Type:
           Total:
           Positive:
           Prevalence:
