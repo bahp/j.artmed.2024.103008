@@ -157,8 +157,14 @@ body:
       label: Brief description of the pre-processing
       description: |
         A concise description of pre-processing (example)
-        **Outlier Removal**: Physiological ranges, ...
-        **Class Imbalance**: random undersampling (RANDU), oversampling (RANDO), sythetic (SMOTE), ...
+        **Outlier Removal**:
+          Physiological range,
+          Interquartlie range, ...
+
+        **Class Imbalance**:
+          random undersampling (RANDU)
+          random oversampling (RANDO),
+          sythetic (SMOTE), ...
 
         **Missing inputation (M)**:
           median, mean,
@@ -169,8 +175,7 @@ body:
           PaO2/FiO2 (FE_CRAFTED)
           min, max, mean (FE_STATS)
           time differences (FE_DELTA)
-          missing mask (FE_MASK)
-          ...
+          missing mask (FE_MASK), ...
     validations:
       required: false
 
