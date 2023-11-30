@@ -124,9 +124,9 @@ body:
     description: A concise description of the clinical variables
     |
       - 33 features x 48 timesteps (t=1h) (appendix B)
-      - Demographics (1): Age
-      - Vital Signs (4): BT, DBP, HR, RR, HR_STD, RR_STD, CORR_HR_RR
-      - Laboratory (22): BUN, ALB, PLT, Chloride, Creatinine, Phosphorus,
+      - Demographics: Age
+      - Vital Signs: BT, DBP, HR, RR, HR_STD, RR_STD, CORR_HR_RR
+      - Laboratory: BUN, ALB, PLT, Chloride, Creatinine, Phosphorus,
         ALP, SO2, PCO2, SPO2, Glucose, Potassium, Sodium, ALT, Magnesium,
         Lactate, WBC, BIL, Troponin Test, Calcium
   validations:
