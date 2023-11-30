@@ -60,14 +60,14 @@ body:
       A concise description of the clinical setting and inclusion criteria
         - **Aim**: Prediction
         - **Condition(s)**: BSI
-        - **Ward**: ICU
-        - **Dataset**: MIMIC | eICU
+        - **Ward(s)**: ICU
+        - **Dataset(s)**: MIMIC | eICU
         - **Inclusion criteria**: Age>18, inpatient, underwent blood culture
     value: |
         - Aim:
         - Condition(s):
-        - Ward:
-        - Dataset:
+        - Ward(s):
+        - Dataset(s):
         - Inclusion criteria:
     render: markdown
   validations:
@@ -81,7 +81,7 @@ body:
         - **Observation type**: episodes
         - **Total**: 6557
         - **Positive**: 877
-        - **Prevalence**: 13.38
+        - **Prevalence**: 13.38%
     value: |
         - Observation type:
         - Total:
@@ -94,7 +94,21 @@ body:
 - type: textarea
   attributes:
     label: Brief description of the data
-    description: A concise description of the data
+    description: |
+      A concise description of the data (see example)
+      3969 patients admitted
+      4582 blood culture episodes
+
+      total, neg, none, pos
+      total: 6557, 4319, 1361, 877
+      train (70%): 4582, 3039, 940, 603
+      val (20%): 1320, 852, 283, 185
+      test (10%): 655, 428, 138, 89
+      (Table 1)
+
+      period: 2011-2015
+
+      none  = culture not drawn at all
   validations:
     required: false
 
