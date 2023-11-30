@@ -159,12 +159,14 @@ body:
         A concise description of pre-processing (example)
         Outlier Removal: None
         Class Imbalance: RANDU, RANDO, SMOTE
-        Missing inputation (M): M_MEDIAN, M_MEAN, FFILL, BFILL, M_MI, M_MASK
+        Missing inputation (M):
+          median, mean, forward fill, backward fill, multiple imputation, ...
         Feature Engineering (FE):
-          PaO2/FiO2 (FE_CRAFTED)
-          min, max, mean (FE_STATS)
-          time differences (FE_DELTA)
-          missing mask (FE_MASK)
+          - PaO2/FiO2 (FE_CRAFTED)
+          - min, max, mean (FE_STATS)
+          - time differences (FE_DELTA)
+          - missing mask (FE_MASK)
+          ...
     validations:
       required: false
 
