@@ -11,12 +11,33 @@ body:
     - label: I have searched the existing issues
       required: true
 
+- type: checkboxes
+  attributes:
+    label: Have you checked how the manuscripts are reported?
+    description: Please have a look at the manuscript .xls file.
+    options:
+    - label: I have had a look the existing manuscripts.
+      required: true
+
+- type: textarea
+  attributes:
+    label: Link
+    description: Link to the manuscript
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Brief description
+    description: A concise description of the manuscript
+  validations:
+    required: false
 
 - type: textarea
   attributes:
     label: Metadata
     description: |
-      examples:
+      Basic information of the manuscript (example):
         - **Year**: 2022
         - **Authors**: Boner et al
         - **Title**: Deep learning risk prediction...
@@ -37,7 +58,7 @@ body:
     label: Criteria
     description: |
       examples:
-        - **Aim**:
+        - **Aim**: Prediction
         - **Ward**: ICU
         - **Dataset**: MIMIC | eICU
         - **Inclusion criteria**: Age>18, inpatient, underwent blood culture
@@ -61,17 +82,34 @@ body:
         - **Total**: 6557
         - **Positive**: 877
         - **Prevalence**: 13.38
-        - **Number of clinical variables**: 28
-        - **Demographics**: 1
-        - **Vital Signs**: 4
-        - **Laboratory**: 22
-        - **Other**: 1
     value: |
         - Observation type:
         - Total:
         - Positive:
         - Prevalence:
-        - Number of clinical variables:
+    render: markdown
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Brief description of the data
+    description: A concise description of the data
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Data
+    description: |
+      examples:
+        - **Total number of clinical variables**: 28
+        - **Demographics**: 1
+        - **Vital Signs**: 4
+        - **Laboratory**: 22
+        - **Other**: 1
+    value: |
+        - Total number of clinical variables:
         - Demographics
         - Vital signs
         - Laboratory
@@ -82,10 +120,71 @@ body:
 
 - type: textarea
   attributes:
-    label: Brief description
-    description: A concise description of the manuscript
+    label: Brief description of the clinical variables
+    description: A concise description of the clinical variables
   validations:
     required: false
+
+- type: textarea
+  attributes:
+    label: Brief description of the pre-processing
+    description: A concise description of pre-processing
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Brief report of the performance
+    description: A concise description of models' performances
+  validations:
+    required: false
+
+- type: checkboxes
+  attributes:
+    label: Is there an existing issue for this?
+    description: Please search to see if an issue already exists for the bug you encountered.
+    options:
+    - label: Is the data publicly available?
+      required: true
+    - label: Is the code publicly available?
+      required: true
+
+
+- type: textarea
+  attributes:
+    label: Feature ranking
+    description: A concise description of models' performances
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Brief report of the target definition
+    description: A concise description of models' performances
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Brief summary of intersting comments.
+    description: A concise summary of interesting comments.
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Brief summary of possible concerns.
+    description: A concise summary of possible concerns.
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: List of acronyms
+    description: Please include any acronym used above.
+  validations:
+    required: false
+
 - type: textarea
   attributes:
     label: Expected Behavior
