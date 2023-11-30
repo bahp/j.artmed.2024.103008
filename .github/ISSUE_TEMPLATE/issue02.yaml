@@ -48,24 +48,24 @@ body:
     validations:
       required: false
 
-  - type: input
-    attributes:
-      label: Year
-      placeholder: ex. 2022
-    validations:
-      required: false
+  #- type: input
+  #  attributes:
+  #    label: Year
+  #    placeholder: ex. 2022
+  #  validations:
+  #    required: false
 
-  - type: input
-    attributes:
-      label: Authors
-      placeholder: ex. Hernandez et al
-    validations:
-      required: false
+  #- type: input
+  #  attributes:
+  #    label: Authors
+  #    placeholder: ex. Hernandez et al
+  #  validations:
+  #    required: false
 
   - type: input
     attributes:
       label: Tags
-      description: Provide a link to the original manuscript.
+      description: Provide a few tags that describe the manuscript.
       placeholder: ex. Sepsis | FNN | CNN | GRU | SOFA
     validations:
       required: false
@@ -75,26 +75,6 @@ body:
       label: Score
       description: The mark you give to the manuscript (0-10).
       placeholder: ex. 6.5
-    validations:
-      required: false
-
-  - type: textarea
-    attributes:
-      label: Metadata
-      description: |
-        Basic information of the manuscript (example):
-          - **Year**: 2022
-          - **Authors**: Boner et al
-          - **Title**: Deep learning risk prediction...
-          - **Tags**: FNN | CNN | GRU
-          - **Score**: 7
-      value: |
-          - Year:
-          - Authors:
-          - Title:
-          - Tags:
-          - Score:
-      render: markdown
     validations:
       required: false
 
@@ -140,7 +120,11 @@ body:
     attributes:
       label: Brief description of the data
       description: |
-        A concise description of the data (see example)
+        A concise description of the data.
+
+        Example
+        --------------------------------------
+        period: 2011-2015
 
         3969 patients admitted
         4582 blood culture episodes
@@ -152,9 +136,8 @@ body:
         test (10%): 655, 428, 138, 89
         (see Table 1)
 
-        period: 2011-2015
-
         none  = culture not drawn at all
+        ----------------------------------------
     validations:
       required: false
 
