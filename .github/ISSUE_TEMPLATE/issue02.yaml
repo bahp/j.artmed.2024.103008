@@ -157,9 +157,9 @@ body:
       label: Brief description of the pre-processing
       description: |
         A concise description of pre-processing (example)
-        Outlier Removal: Physiological ranges
-        Class Imbalance: random undersampling (RANDU), oversampling (RANDO), SMOTE, ...
-        
+        **Outlier Removal**: Physiological ranges, ...
+        Class Imbalance: random undersampling (RANDU), oversampling (RANDO), sythetic (SMOTE), ...
+
         Missing inputation (M):
           median, mean,
           forward fill, backward fill,
