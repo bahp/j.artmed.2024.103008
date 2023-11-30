@@ -145,18 +145,20 @@ body:
     attributes:
       label: Brief description of the clinical variables
       description: |
-        Example:
-          Age + (26 features x 48 timesteps) (t=1h) (appendix B)
-          Demographics (1): Age
-          Vital Signs (4): BT, DBP, HR, RR, HR_STD, RR_STD, CORR_HR_RR
-          Laboratory (22): BUN, ALB, PLT, Chloride, Creatinine, Phosphorus, ALP, SO2, PCO2, SPO2, Glucose,...
+        A concise description of the clinical features.
+
+        Age + (26 features x 48 timesteps) (t=1h) (appendix B)
+        **Demographics (1)**: Age
+        **Vital Signs (4)**: BT, DBP, HR, RR, HR_STD, RR_STD, CORR_HR_RR
+        **Laboratory (22)**: BUN, ALB, PLT, Chloride, Creatinine, Phosphorus, ALP, SO2, PCO2, SPO2, Glucose,...
           Other (0):
 
   - type: textarea
     attributes:
       label: Brief description of the pre-processing
       description: |
-        A concise description of pre-processing (example)
+        A concise description of pre-processing.
+
         **Outlier Removal**:
           Physiological range,
           Interquartlie range, ...
@@ -164,7 +166,7 @@ body:
         **Class Imbalance**:
           random undersampling (RANDU)
           random oversampling (RANDO),
-          sythetic (SMOTE), ...
+          sythetic minority oversampling technique (SMOTE), ...
 
         **Missing inputation (M)**:
           median, mean,
