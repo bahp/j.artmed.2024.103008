@@ -177,7 +177,7 @@ body:
         3h 3h 10x3 XGB X.X X.X X.X X.X
         3h 3h 10x3 SOFA X.X X.X X.X X.x
 
-        LB: Look-back window; LA: Look ahead window;
+        LB: Look-back window; LA: Look ahead window; FxT: Feature x Timesteps; AUCROC: Aread under the ROC;
     validations:
       required: false
 
