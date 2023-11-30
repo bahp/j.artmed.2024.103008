@@ -91,11 +91,11 @@ body:
           - **Dataset(s)**: MIMIC | eICU
           - **Inclusion criteria**: Age>18, inpatient, underwent blood culture
       value: |
-          - Aim:
-          - Condition(s):
-          - Ward(s):
-          - Dataset(s):
-          - Inclusion criteria:
+          Aim:
+          Condition(s):
+          Ward(s):
+          Dataset(s):
+          Inclusion criteria:
       render: markdown
     validations:
       required: false
