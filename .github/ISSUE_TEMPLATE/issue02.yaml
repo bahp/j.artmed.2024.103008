@@ -57,18 +57,18 @@ body:
   attributes:
     label: Criteria
     description: |
-      examples:
+      A concise description of the clinical setting and inclusion criteria
         - **Aim**: Prediction
+        - **Condition(s)**: BSI
         - **Ward**: ICU
         - **Dataset**: MIMIC | eICU
         - **Inclusion criteria**: Age>18, inpatient, underwent blood culture
-        - **Positive**: BSI
     value: |
         - Aim:
+        - Condition(s):
         - Ward:
         - Dataset:
         - Inclusion criteria:
-        - Positive:
     render: markdown
   validations:
     required: false
@@ -77,7 +77,7 @@ body:
   attributes:
     label: Data
     description: |
-      examples:
+      A concise description of the datasets used.
         - **Observation type**: episodes
         - **Total**: 6557
         - **Positive**: 877
@@ -102,18 +102,18 @@ body:
   attributes:
     label: Clinical variables
     description: |
-      examples:
-        - **Total number of clinical variables**: 28
+      A concise description of the clinical variables used.
+        - **Total*: 28
         - **Demographics**: 1
         - **Vital Signs**: 4
         - **Laboratory**: 22
         - **Other**: 1
     value: |
-        - Total number of clinical variables:
-        - Demographics
-        - Vital signs
-        - Laboratory
-        - Other
+        - Total:
+        - Demographics:
+        - Vital signs:
+        - Laboratory:
+        - Other:
     render: markdown
   validations:
     required: false
