@@ -14,7 +14,6 @@ body:
   - type: checkboxes
     attributes:
       label: Is there an existing issue for this?
-      #description: Please search to see if an issue already exists for the bug you encountered.
       options:
       - label: I have searched the existing issues
         required: true
@@ -22,7 +21,6 @@ body:
   - type: checkboxes
     attributes:
       label: Have you checked how the clinical scoring systems are reported?
-      #description: Please have a look at the manuscript .xls file.
       options:
       - label: I have had a look the existing clinical scoring systems.
         required: true
@@ -50,19 +48,12 @@ body:
     validations:
       required: false
 
-  #- type: input
-  #  attributes:
-  #    label: Year
-  #    placeholder: ex. 2022
-  #  validations:
-  #    required: false
-
-  #- type: input
-  #  attributes:
-  #    label: Authors
-  #    placeholder: ex. Hernandez et al
-  #  validations:
-  #    required: false
+  - type: input
+    attributes:
+      label: Year
+      placeholder: ex. 2022
+    validations:
+      required: false
 
   - type: input
     attributes:
@@ -104,7 +95,7 @@ body:
     validations:
       required: false
 
- - type: textarea
+  - type: textarea
     attributes:
       label: Clinical variables
       description: The clinical variables used to compute the score.
@@ -112,7 +103,7 @@ body:
     validations:
       required: false
 
- - type: textarea
+  - type: textarea
     attributes:
       label: Definition
       description: |
