@@ -85,10 +85,10 @@ body:
       label: Clinical setting
       description: |
         A concise description of the clinical setting and inclusion criteria.
-          - **Aim**: Prediction
-          - **Condition(s)**: BSI
+          - **Aim**: Diagnosis | Prognosis | Categorization
+          - **Condition(s)**: Bacteremia | BSI | Sepsis
           - **Ward(s)**: ICU
-          - **Dataset(s)**: MIMIC | eICU
+          - **Dataset(s)**: MIMIC | eICU | ...
           - **Inclusion criteria**: Age>18, inpatient, underwent blood culture
       value: |
           Aim:
@@ -106,7 +106,7 @@ body:
       description: |
         A concise description of the datasets used.
 
-        - **Observation type**: episodes, patients, ...
+        - **Observation type**: episodes | patients | ...
         - **Total**: 6557
         - **Positive**: 877
         - **Prevalence**: 13.38%
