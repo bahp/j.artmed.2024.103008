@@ -98,7 +98,7 @@ body:
     validations:
       required: false
 
-  - type: input
+  - type: markdown
     attributes:
       label: Data
       description: |
