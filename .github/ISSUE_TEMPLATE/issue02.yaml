@@ -151,58 +151,6 @@ body:
     validations:
       required: false
 
-  - type: textarea
-    attributes:
-      label: Brief report of the performance
-      description: |
-        A concise description of the performance
-
-        5	3	156
-        109
-        100
-        209
-        100
-        100
-        100
-        100"	"DFN-156 (Insight)
-        DFN-109F
-        DFN-100F
-        DFN-209F
-        LSTM-100F-3h
-        LSTM-100F-0h
-        LSTM-100F-1h
-        LSTM-100F-2h"	"NA
-        0.89
-        0.92
-        0.92
-        0.93
-        0.99
-        0.96
-        0.93"	"0.83
-        0.89
-        0.92
-        0.92
-        0.93
-        0.99
-        0.96
-        0.94"		"0.90
-        0.83
-        0.89
-        0.86
-        0.91
-        0.97
-        0.92
-        0.91"	"0.81
-        0.94
-        0.94
-        0.97
-        0.94
-        1.00
-        1.00
-        1.00"
-    validations:
-      required: false
-
   - type: checkboxes
     attributes:
       label: Materials
