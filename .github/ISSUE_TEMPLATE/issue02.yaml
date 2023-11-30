@@ -98,7 +98,7 @@ body:
     validations:
       required: false
 
-  - type: textarea
+  - type: input
     attributes:
       label: Data
       description: |
