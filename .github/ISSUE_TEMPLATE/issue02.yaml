@@ -1,4 +1,4 @@
-name: Manuscript
+name: 📝 Manuscript
 description: File a new manuscript
 title: "[Manuscript] <title>"
 labels: ["Bug", "Needs Triage"]
@@ -7,7 +7,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        Thanks for taking the time to fill out this manuscript report!
+
+        Kindly review the file <xxx> for guidance on completing this form.
 
   - type: input
     attributes:
@@ -20,7 +22,7 @@ body:
   - type: checkboxes
     attributes:
       label: Is there an existing issue for this?
-      description: Please search to see if an issue already exists for the bug you encountered.
+      #description: Please search to see if an issue already exists for the bug you encountered.
       options:
       - label: I have searched the existing issues
         required: true
@@ -28,7 +30,7 @@ body:
   - type: checkboxes
     attributes:
       label: Have you checked how the manuscripts are reported?
-      description: Please have a look at the manuscript .xls file.
+      #description: Please have a look at the manuscript .xls file.
       options:
       - label: I have had a look the existing manuscripts.
         required: true
@@ -170,10 +172,12 @@ body:
 
 
         LB LA FxT Model AUCROC AUCPR SENS SPEC ...
-        5h 3h 10x5 SVM
-        5h 3h 10x5 GRU
-        3h 3h 10x3 XGB
-        3h 3h 10x3 SOFA
+        5h 3h 10x5 SVM 0.9 0.2 0.8 0.4
+        5h 3h 10x5 GRU X.X X.X X.X X.X
+        3h 3h 10x3 XGB X.X X.X X.X X.X
+        3h 3h 10x3 SOFA X.X X.X X.X X.x
+
+        LB: Look-back window; LA: Look ahead window;
     validations:
       required: false
 
