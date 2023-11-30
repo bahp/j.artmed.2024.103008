@@ -122,8 +122,7 @@ body:
       description: |
         A concise description of the data.
 
-        Example
-        --------------------------------------
+        Example:
         period: 2011-2015
 
         3969 patients admitted
@@ -137,7 +136,6 @@ body:
         (see Table 1)
 
         none  = culture not drawn at all
-        ----------------------------------------
     validations:
       required: false
 
