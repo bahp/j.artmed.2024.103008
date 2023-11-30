@@ -9,7 +9,7 @@ body:
       value: |
         Thanks for taking the time to fill out this manuscript report!
 
-        Kindly review the file <xxx> for guidance on completing this form.
+        Kindly review the file <a href="www.google.com">xxx</a> for guidance on completing this form.
 
   - type: checkboxes
     attributes:
@@ -177,7 +177,7 @@ body:
         3h 3h 10x3 XGB X.X X.X X.X X.X
         3h 3h 10x3 SOFA X.X X.X X.X X.x
 
-        LB: Look-back window; LA: Look ahead window; FxT: Feature x Timesteps; AUCROC: Aread under the ROC;
+        LB: Look-back window; LA: Look ahead window; FxT: Feature x Timesteps; AUCROC: Area under the ROC;
     validations:
       required: false
 
@@ -240,12 +240,12 @@ body:
     validations:
       required: false
 
-  - type: dropdown
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
+  #- type: dropdown
+  #  attributes:
+  #    label: What browsers are you seeing the problem on?
+  #    multiple: true
+  #    options:
+  #      - Firefox
+  #      - Chrome
+  #      - Safari
+  #      - Microsoft Edge
