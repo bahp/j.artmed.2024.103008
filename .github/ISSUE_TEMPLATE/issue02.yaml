@@ -158,14 +158,14 @@ body:
       description: |
         A concise description of pre-processing (example)
         **Outlier Removal**: Physiological ranges, ...
-        Class Imbalance: random undersampling (RANDU), oversampling (RANDO), sythetic (SMOTE), ...
+        **Class Imbalance**: random undersampling (RANDU), oversampling (RANDO), sythetic (SMOTE), ...
 
-        Missing inputation (M):
+        **Missing inputation (M)**:
           median, mean,
           forward fill, backward fill,
           multiple imputation, ...
 
-        Feature Engineering (FE):
+        **Feature Engineering (FE)**:
           PaO2/FiO2 (FE_CRAFTED)
           min, max, mean (FE_STATS)
           time differences (FE_DELTA)
