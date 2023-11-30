@@ -191,6 +191,7 @@ body:
     attributes:
       label: Comments
       description: Provide any comments that might be useful.
+      placeholder: ex. Interesting missing inputation and detailed performance reported in supplementary material
     validations:
       required: false
 
@@ -198,6 +199,7 @@ body:
     attributes:
       label: Concerns
       description: Provide any concerns that you might have regarding the manuscript.
+      placeholder: ex. Excessive feature engineering might have led to overfitting
     validations:
       required: false
 
