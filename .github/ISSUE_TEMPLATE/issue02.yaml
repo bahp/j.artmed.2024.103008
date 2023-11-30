@@ -112,10 +112,10 @@ body:
         **Positive**: 877
         **Prevalence**: 13.38%
       value: |
-          - Observation type:
-          - Total:
-          - Positive:
-          - Prevalence:
+          Observation type:
+          Total:
+          Positive:
+          Prevalence:
       render: markdown
     validations:
       required: false
@@ -147,7 +147,7 @@ body:
     attributes:
       label: Brief description of the clinical variables
       description: |
-        A concise description of the clinical features.
+        A concise description of the clinical variables.
 
         Age + (26 features x 48 timesteps) (t=1h) (appendix B)
         **Demographics (1)**: Age
@@ -196,7 +196,7 @@ body:
         3h 3h 10x3 XGB X.X X.X X.X X.X
         3h 3h 10x3 SOFA X.X X.X X.X X.x
 
-        LB: Look-back window; LA: Look ahead window; FxT: Feature x Timesteps; AUCROC: Area under the ROC;
+        LB: Look-back window; LA: Look ahead window; FxT: Features x Timesteps; AUCROC: Area under the ROC;
     validations:
       required: false
 
