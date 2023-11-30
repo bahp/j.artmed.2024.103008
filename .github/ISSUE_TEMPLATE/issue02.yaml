@@ -48,24 +48,33 @@ body:
     validations:
       required: false
 
-
   - type: input
     attributes:
+      lanel: Year
       placeholder: ex. 2022
     validations:
       required: false
 
   - type: input
     attributes:
-      placeholder: ex. http://xxxx.com/manuscript01
+      label: Authors
+      placeholder: ex. Hernandez et al
     validations:
       required: false
 
   - type: input
     attributes:
-      label: Link to manuscript
+      label: Tags
       description: Provide a link to the original manuscript.
-      placeholder: ex. http://xxxx.com/manuscript01
+      placeholder: ex. Sepsis | FNN | CNN | GRU | SOFA
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Score
+      description: The mark you give to the manuscript (0-10).
+      placeholder: ex. 6.5
     validations:
       required: false
 
