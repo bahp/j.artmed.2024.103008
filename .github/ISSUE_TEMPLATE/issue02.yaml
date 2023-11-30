@@ -11,14 +11,6 @@ body:
 
         Kindly review the file <xxx> for guidance on completing this form.
 
-  - type: input
-    attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
-
   - type: checkboxes
     attributes:
       label: Is there an existing issue for this?
@@ -34,6 +26,14 @@ body:
       options:
       - label: I have had a look the existing manuscripts.
         required: true
+
+  - type: input
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
 
   - type: input
     attributes:
