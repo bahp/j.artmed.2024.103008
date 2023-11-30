@@ -98,7 +98,7 @@ body:
     validations:
       required: false
 
-  - type: markdown
+  - type: textarea
     attributes:
       label: Data
       description: |
