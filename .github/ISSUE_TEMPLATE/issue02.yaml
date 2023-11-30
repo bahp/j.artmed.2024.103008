@@ -162,6 +162,21 @@ body:
     validations:
       required: false
 
+  - type: textarea
+    attributes:
+      label: Performance
+      description: |
+        A concise report of model performance.
+
+
+        LB LA FxT Model AUCROC AUCPR SENS SPEC ...
+        5h 3h 10x5 SVM
+        5h 3h 10x5 GRU
+        3h 3h 10x3 XGB
+        3h 3h 10x3 SOFA
+    validations:
+      required: false
+
   - type: checkboxes
     attributes:
       label: Materials
