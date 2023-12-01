@@ -1,7 +1,7 @@
 #name: ⚕️Clinical Scoring System
 name: Clinical Scoring System
 description: File a new clinical scoring system entry
-placeholder: "[Manuscript] <title>"
+title: "[Manuscript] <title>"
 labels: ["submission", "score"]
 body:
 
