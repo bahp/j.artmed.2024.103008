@@ -2,7 +2,7 @@
 name: Manuscript
 description: File a new manuscript entry
 title: "[Manuscript] <title>"
-labels: ["submission" "manuscript"]
+labels: ["submission", "manuscript"]
 body:
 
   - type: markdown

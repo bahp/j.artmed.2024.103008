@@ -2,7 +2,7 @@
 name: Clinical Scoring System
 description: File a new clinical scoring system entry
 title: "[Manuscript] <title>"
-labels: ["submission", "manuscript"]
+labels: ["submission", "score"]
 body:
 
   - type: markdown
