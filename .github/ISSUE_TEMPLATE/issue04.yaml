@@ -1,6 +1,6 @@
 #name: ⚕️Clinical Scoring System
 name: Article
-description: Recommend and article
+description: Recommend an article
 title: "[Manuscript] <title>"
 labels: ["recommendation"]
 body:
@@ -44,5 +44,15 @@ body:
     attributes:
       label: Brief description
       description: A concise description of the clinical scoring system
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Anything else?
+      description: |
+        Links? References? Anything that will give us more context?
+
+        Tip: You can attach images or log files by clicking this area to highlight it and then dragging files in.
     validations:
       required: false
