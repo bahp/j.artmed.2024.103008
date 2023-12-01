@@ -1,0 +1,41 @@
+#name: ⚕️Clinical Scoring System
+name: Article
+description: Recommend and article
+title: "[Manuscript] <title>"
+labels: ["Recommendation"]
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to make a recommendation!
+
+  - type: checkboxes
+    attributes:
+      label: Is the manuscript included already?
+      options:
+      - label: I have searched the existing issues
+        required: true
+
+  - type: input
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Link to manuscript
+      description: Provide a link to the original manuscript.
+      placeholder: ex. http://xxxx.com/manuscript01
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Brief description
+      description: A concise description of the clinical scoring system
+    validations:
+      required: false
