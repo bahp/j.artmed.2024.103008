@@ -14,7 +14,7 @@ body:
     attributes:
       #label: Is the manuscript included already?
       options:
-      - label: I have searched the existing entries and issues and the manuscript is not included.
+      - label: I have reviewed the existing entries/issues and the manuscript is not part of them.
         required: true
 
   - type: input
