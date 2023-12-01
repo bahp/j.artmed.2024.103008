@@ -2,7 +2,7 @@
 name: Article
 description: Recommend and article
 title: "[Manuscript] <title>"
-labels: ["Recommendation"]
+labels: ["recommendation"]
 body:
 
   - type: markdown
