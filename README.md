@@ -25,7 +25,7 @@ by *[Bernard Hernandez](https://bahp.github.io/portfolio-academic/),
 
 This [article]() has been submitted for publication in *"xxxxl"*.
 
->The objective is to consistently refresh this repository with fresh articles (see ["Submit a new entry"](#submission)
+>The objective is to consistently refresh this repository with fresh articles (see ["Submit a new entry"](#submissions))
 
 The manuscript explores the pivotal role of predictive models and their transformative impact on the field of 
 healthcare within the context of blood-related infections and offers a **live review** of the machine-learning 
