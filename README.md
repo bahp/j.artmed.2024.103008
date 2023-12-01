@@ -1,4 +1,4 @@
-# dkm-bsi-dl
+# tldh-bbs-review
 
 Update XX/XX/XXXX: Description <br>
 
@@ -29,12 +29,12 @@ This [article]() has been submitted for publication in *"xxxxl"*.
 suggestions, please feel free to open an issue, and we would be happy to incorporate them.
 
 The manuscript explores the pivotal role of predictive models and their transformative impact on the field of 
-healthcare within the context of blood-related infections and offers a **live** survey of the machine-learning 
+healthcare within the context of blood-related infections and offers a **live review** of the machine-learning 
 techniques that have been used for the detection and prediction of bacteremia, bloodstream infections, and sepsis. 
 By delving into these methods, we aim to shed light on their efficacy, potential limitations, and the intricacies 
 of their integration into clinical practice. In doing so, we will undertake a critical comparison with the existing 
 clinical scoring systems, illuminating both the novel insights provided by machine learning and the practical 
-considerations essential for their successful implementation in real-world healthcare scenarios.
+considerations essential for their successful implementation in real-world healthcare scenarios.
 
 <!-- ![](manuscript/figures/hawaii-trend.png) -->
 <!-- *Caption for the example figure with the main results.* -->
@@ -74,7 +74,7 @@ would be happy to incorporate them.
  
    - File a new manuscript ([link](https://github.com/bahp/tldh-bbs-review/issues/new?assignees=&labels=Bug%2CNeeds+Triage&projects=&template=issue02.yaml&title=%5BManuscript%5D+%3Ctitle%3E))
    - File a new clinical scoring system ([link](https://github.com/bahp/tldh-bbs-review/issues/new?assignees=&labels=Bug%2CNeeds+Triage&projects=&template=issue03.yaml&title=%5BManuscript%5D+%3Ctitle%3E))
-   - Recommend an article (open a standard issue, use the article title)
+   - Recommend an article ([link](https://github.com/bahp/tldh-bbs-review/issues/new?assignees=&labels=recommendation&projects=&template=issue04.yaml&title=%5BManuscript%5D+%3Ctitle%3E))
 
 ### Citing
 
