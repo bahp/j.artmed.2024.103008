@@ -1,7 +1,8 @@
-name: 📝 Manuscript
+#name: 📝 Manuscript
+name: Manuscript
 description: File a new manuscript
 title: "[Manuscript] <title>"
-labels: ["Bug", "Needs Triage"]
+labels: ["Manuscript", "Needs Review"]
 body:
 
   - type: markdown
@@ -24,7 +25,7 @@ body:
       label: Have you checked how the manuscripts are reported?
       #description: Please have a look at the manuscript .xls file.
       options:
-      - label: I have had a look the existing manuscripts.
+      - label: I have reviewed the existing reports.
         required: true
 
   - type: input
@@ -123,7 +124,7 @@ body:
     attributes:
       label: Brief description of the data
       description: |
-        A concise description of the data.
+        A concise description of the data and the validation strategy
 
         **Example:**
         period: 2011-2015
