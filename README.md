@@ -25,8 +25,7 @@ by *[Bernard Hernandez](https://bahp.github.io/portfolio-academic/),
 
 This [article]() has been submitted for publication in *"xxxxl"*.
 
->The objective is to consistently refresh this repository with fresh articles. If you have any 
-suggestions, please feel free to open an issue, and we would be happy to incorporate them.
+>The objective is to consistently refresh this repository with fresh articles (see ["Submit a new entry"](#submission)
 
 The manuscript explores the pivotal role of predictive models and their transformative impact on the field of 
 healthcare within the context of blood-related infections and offers a **live review** of the machine-learning 
@@ -66,11 +65,10 @@ repository
     |- LICENSE
 ```
 
-### Submit a new entry
+### [submissions] Submit a new entry
 
-The objective is to consistently refresh this repository with fresh articles. If you have any suggestions, 
-please feel free to open an [issue](https://github.com/bahp/tldh-bbs-review/issues/new/choose), and we 
-would be happy to incorporate them. 
+The aim is to consistently refresh this repository with missing and/or new articles. If you have 
+any suggestions, please feel free to open an issue, and we would be happy to incorporate them. 
  
    - File a new manuscript ([link](https://github.com/bahp/tldh-bbs-review/issues/new?assignees=&labels=Bug%2CNeeds+Triage&projects=&template=issue02.yaml&title=%5BManuscript%5D+%3Ctitle%3E))
    - File a new clinical scoring system ([link](https://github.com/bahp/tldh-bbs-review/issues/new?assignees=&labels=Bug%2CNeeds+Triage&projects=&template=issue03.yaml&title=%5BManuscript%5D+%3Ctitle%3E))
