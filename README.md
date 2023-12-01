@@ -65,8 +65,7 @@ repository
     |- LICENSE
 ```
 
-### [submissions]
-### Submit a new entry
+### [submissions] Submit a new entry
 
 The aim is to consistently refresh this repository with missing and/or new articles. If you have 
 any suggestions, please feel free to open an issue, and we would be happy to incorporate them. 
