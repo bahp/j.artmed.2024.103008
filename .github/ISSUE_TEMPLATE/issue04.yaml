@@ -12,9 +12,9 @@ body:
 
   - type: checkboxes
     attributes:
-      label: Is the manuscript included already?
+      #label: Is the manuscript included already?
       options:
-      - label: I have searched the existing issues
+      - label: I have searched the existing entries and issues and the manuscript is not included.
         required: true
 
   - type: input
