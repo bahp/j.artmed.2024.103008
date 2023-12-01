@@ -1,6 +1,6 @@
 #name: 📝 Manuscript
 name: Manuscript
-description: File a new manuscript
+description: File a new manuscript entry
 title: "[Manuscript] <title>"
 labels: ["Manuscript", "Needs Review"]
 body:

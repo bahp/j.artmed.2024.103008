@@ -33,6 +33,13 @@ body:
     validations:
       required: false
 
+ - type: input
+    attributes:
+      label: Year
+      placeholder: ex. 2022
+    validations:
+      required: false
+
   - type: textarea
     attributes:
       label: Brief description
