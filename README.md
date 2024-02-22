@@ -1,4 +1,4 @@
-# tldh-bbs-review
+# bahp-bbs-review
 
 Update XX/XX/XXXX: Description <br>
 
@@ -12,8 +12,8 @@ by *[Bernard Hernandez](https://bahp.github.io/portfolio-academic/),
     [Paul Vasikasin](https://www.imperial.ac.uk/people/p.vasikasin20), 
     [John Daniels](https://scholar.google.com/citations?user=TGzM-T8AAAAJ),
     [Jesus Rodriguez-Manzano](https://www.imperial.ac.uk/people/j.rodriguez-manzano),
-    [Pantelis Georgiou](https://www.imperial.ac.uk/people/pantelis), 
-    [Bernard Hernandez](https://bahp.github.io/portfolio-academic/), and 
+    [Frances J. Davies](https://www.imperial.ac.uk/people/f.davies),
+    [Pantelis Georgiou](https://www.imperial.ac.uk/people/pantelis), and 
     [Alison H. Holmes](https://www.liverpool.ac.uk/systems-molecular-and-integrative-biology/staff/alison-holmes/).*
 
 - *Centre for Antimicrobial Optimisation, Imperial College London, London, UK*
@@ -21,6 +21,7 @@ by *[Bernard Hernandez](https://bahp.github.io/portfolio-academic/),
 - *AI4Health Centre for Doctoral Training, Imperial College London, London, UK*
 - *Imperial College Healthcare NHS Trust, London, UK*
 - *Centre for Bio-inspired Technology, Imperial College London, London, UK*
+- *Imperial College Healthcare NHS Trust, Praed Street, W2 1NY, UK*
 - *Department of Global Health and Infectious Diseases, University of Liverpool, UK*
 
 This [article]() has been submitted for publication in *"xxxxl"*.
