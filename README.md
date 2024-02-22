@@ -32,7 +32,7 @@ This [article]() has been submitted for publication in *"xxxxl"*.
 >The objective is to consistently update this repository with fresh articles (see ["Submit a new entry"](#Submit-a-new-entry))
 
 The manuscript explores the pivotal role of predictive models and their transformative impact on the field of 
-healthcare within the context of blood-related infections and offers a **live review** of the machine-learning 
+healthcare within the context of blood-related infections and offers a **living review** of the machine-learning 
 techniques that have been used for the detection and prediction of bacteremia, bloodstream infections, and sepsis. 
 By delving into these methods, we aim to shed light on their efficacy, potential limitations, and the intricacies 
 of their integration into clinical practice. In doing so, we will undertake a critical comparison with the existing 
