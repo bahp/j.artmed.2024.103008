@@ -12,6 +12,7 @@ by *[Bernard Hernandez](https://bahp.github.io/portfolio-academic/),
     [Paul Vasikasin](https://www.imperial.ac.uk/people/p.vasikasin20), 
     [John Daniels](https://scholar.google.com/citations?user=TGzM-T8AAAAJ),
     [Jesus Rodriguez-Manzano](https://www.imperial.ac.uk/people/j.rodriguez-manzano),
+    [Frances J. Davies](https://www.imperial.ac.uk/people/f.davies),
     [Pantelis Georgiou](https://www.imperial.ac.uk/people/pantelis), and 
     [Alison H. Holmes](https://www.liverpool.ac.uk/systems-molecular-and-integrative-biology/staff/alison-holmes/).*
 
