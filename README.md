@@ -47,28 +47,6 @@ considerations essential for their successful implementation in real-world healt
 > Paste here the abstract.
 
 
-### Getting Started
-
-To get started with the deep learning model and replicate the experiments described in the article, please 
-follow the instructions in the [Documentation](docs/README.md).
-
-```
-repository
-    |- manuscript
-    |- material
-        |- appendix-01
-            |- clinical variables
-        |- appendix-02
-            |- Experimental setup
-        |- appendix-03
-            |- Performance summary
-        |- figures
-            |-
-        |- tables
-            |-
-    |- LICENSE
-```
-
 ### Submit a new entry
 
 The aim is to consistently refresh this repository with missing and/or new articles. If you have 
@@ -92,6 +70,29 @@ If you find it useful, please cite the original article:
 ```
 
 <!-- [Link to the Article](https://example.com/article) -->
+
+### Getting Started
+
+To get started with the deep learning model and replicate the experiments described in the article, please 
+follow the instructions in the [Documentation](docs/README.md).
+
+```
+repository
+    |- manuscript
+    |- material
+        |- appendix-01
+            |- clinical variables
+        |- appendix-02
+            |- Experimental setup
+        |- appendix-03
+            |- Performance summary
+        |- figures
+            |-
+        |- tables
+            |-
+    |- LICENSE
+```
+
 
 ### License
 
