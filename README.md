@@ -21,6 +21,7 @@ by *[Bernard Hernandez](https://bahp.github.io/portfolio-academic/),
 - *AI4Health Centre for Doctoral Training, Imperial College London, London, UK*
 - *Imperial College Healthcare NHS Trust, London, UK*
 - *Centre for Bio-inspired Technology, Imperial College London, London, UK*
+- *Imperial College Healthcare NHS Trust, Praed Street, W2 1NY, UK*
 - *Department of Global Health and Infectious Diseases, University of Liverpool, UK*
 
 This [article]() has been submitted for publication in *"xxxxl"*.
