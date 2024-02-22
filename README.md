@@ -1,6 +1,6 @@
 # bahp-bbs-review
 
-[url-website]: https://bahp.github.io/pyamr/index.html
+[url-website]: https://bahp.github.io/bahp-bbs-review/
 [url-journal]: https://bahp.github.io/pyamr/usage/installation.html
 
 Journal | [Website][url-website] |
