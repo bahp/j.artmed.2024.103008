@@ -1,6 +1,9 @@
 # bahp-bbs-review
 
-Update XX/XX/XXXX: Description <br>
+[url-website]: https://bahp.github.io/pyamr/index.html
+[url-journal]: https://bahp.github.io/pyamr/usage/installation.html
+
+Journal | [Website][url-website] |
 
 ### Advances in machine learning for diagnosis and prognosis of bacteremia, bloodstream infection and sepsis: A live review
 
