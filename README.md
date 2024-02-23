@@ -49,9 +49,9 @@ considerations essential for their successful implementation in real-world healt
 
 ### Submit a new entry
 
-The aim is to consistently refresh this repository with missing and/or new articles. If you have 
-any suggestions, please feel free to open an issue, and we would be happy to incorporate them. See
-the following options:
+Our objective is to regularly update this repository with any absent or recently added 
+articles. Should you have any recommendations, don't hesitate to raise an issue, and 
+we'll gladly include them. Explore the following options:
  
 | Option | Description | Link |
 | --- | --- | --- |
