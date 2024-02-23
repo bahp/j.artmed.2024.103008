@@ -1,5 +1,7 @@
 # bahp-bbs-review
 
+https://img.shields.io/badge/Publication%20type-Living%20Review-purple.svg
+
 [url-website]: https://bahp.github.io/bahp-bbs-review/
 [url-journal]: https://bahp.github.io/pyamr/usage/installation.html
 
