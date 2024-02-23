@@ -46,10 +46,6 @@ considerations essential for their successful implementation in real-world healt
 <!-- ![](manuscript/figures/hawaii-trend.png) -->
 <!-- *Caption for the example figure with the main results.* -->
 
-### Abstract
-
-> Paste here the abstract.
-
 
 ### Submit a new entry
 
@@ -68,6 +64,11 @@ the following options:
    - File a new clinical scoring system ([link](https://github.com/bahp/tldh-bbs-review/issues/new?assignees=&labels=Bug%2CNeeds+Triage&projects=&template=issue03.yaml&title=%5BManuscript%5D+%3Ctitle%3E))
    - Recommend an article ([link](https://github.com/bahp/tldh-bbs-review/issues/new?assignees=&labels=recommendation&projects=&template=issue04.yaml&title=%5BManuscript%5D+%3Ctitle%3E))
 -->
+
+### Abstract
+
+> Paste here the abstract.
+
 
 ### Citing
 
