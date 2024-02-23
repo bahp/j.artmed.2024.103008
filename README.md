@@ -50,11 +50,20 @@ considerations essential for their successful implementation in real-world healt
 ### Submit a new entry
 
 The aim is to consistently refresh this repository with missing and/or new articles. If you have 
-any suggestions, please feel free to open an issue, and we would be happy to incorporate them. 
+any suggestions, please feel free to open an issue, and we would be happy to incorporate them. See
+the following options:
  
+| Option | Description | Link |
+| --- | --- | --- |
+| File manuscript | Provide all information for a manuscript. | [Form](https://github.com/bahp/tldh-bbs-review/issues/new?assignees=&labels=Bug%2CNeeds+Triage&projects=&template=issue02.yaml&title=%5BManuscript%5D+%3Ctitle%3E)
+| File clinical score | Provide all information for a clinical score. | [Form](https://github.com/bahp/tldh-bbs-review/issues/new?assignees=&labels=Bug%2CNeeds+Triage&projects=&template=issue03.yaml&title=%5BManuscript%5D+%3Ctitle%3E)
+| Recommend article | Provide reference to an article that might be interesting. | [Form](https://github.com/bahp/tldh-bbs-review/issues/new?assignees=&labels=recommendation&projects=&template=issue04.yaml&title=%5BManuscript%5D+%3Ctitle%3E)
+
+<!--  
    - File a new manuscript ([link](https://github.com/bahp/tldh-bbs-review/issues/new?assignees=&labels=Bug%2CNeeds+Triage&projects=&template=issue02.yaml&title=%5BManuscript%5D+%3Ctitle%3E))
    - File a new clinical scoring system ([link](https://github.com/bahp/tldh-bbs-review/issues/new?assignees=&labels=Bug%2CNeeds+Triage&projects=&template=issue03.yaml&title=%5BManuscript%5D+%3Ctitle%3E))
    - Recommend an article ([link](https://github.com/bahp/tldh-bbs-review/issues/new?assignees=&labels=recommendation&projects=&template=issue04.yaml&title=%5BManuscript%5D+%3Ctitle%3E))
+-->
 
 ### Citing
 
