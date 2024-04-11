@@ -70,6 +70,18 @@
 
     <div class="row">
       <table id="example" class="display" width="100%"> <!-- nowrap -->
+        <thead></thead>
+        <!-- Filter by column
+        <tfoot>
+          <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+          </tr>
+         </tfoot>-->
       </table>
     </div>
   </div>
@@ -354,8 +366,11 @@
 
 
 
-  
+
   $(document).ready(function() {
+
+    // Hidding error (bad practice fix them)
+    //$.fn.dataTable.ext.errMode = 'none';
 
     // Get columns
     var columns = getColumns()
@@ -398,7 +413,38 @@
         { render: (data, type, row) => html_pre(data), targets: [33, 35, 37, 38] },
         { render: (data, type, row) => html_a(data, row), targets: [2]},
         { render: (data, type, row) => html_status(data, row), targets: [1]}
-      ]
+      ],
+
+
+      /*initComplete: function () {
+        this.api()
+            .columns()
+            .every(function () {
+                let column = this;
+
+                // Create select element
+                let select = document.createElement('select');
+                select.add(new Option(''));
+                column.footer().replaceChildren(select);
+
+                // Apply listener for user change in value
+                select.addEventListener('change', function () {
+                    column
+                        .search(select.value, {exact: true})
+                        .draw();
+                });
+
+                // Add list of options
+                column
+                    .data()
+                    .unique()
+                    .sort()
+                    .each(function (d, j) {
+                        console.log(d)
+                        select.add(new Option(d));
+                    });
+            });
+      }*/
     });
 
     /*$('#selectColumn').on('change', function (e) {
