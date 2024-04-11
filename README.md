@@ -9,7 +9,7 @@
 
 Journal | [Website][url-website] |
 
-### Advances in machine learning for diagnosis and prognosis of bacteremia, bloodstream infection and sepsis: A live review
+### Advances in diagnosis and prognosis of bacteremia, bloodstream infection and sepsis using machine learning: A comprehensive living literature review
 
 by *[Bernard Hernandez](https://bahp.github.io/portfolio-academic/),
     [Damien K. Ming](https://www.imperial.ac.uk/people/d.ming), 
