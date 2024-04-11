@@ -351,6 +351,10 @@
     return '<span class="' + color + '">' + data + "</span>"
   }
 
+
+
+
+  
   $(document).ready(function() {
 
     // Get columns
@@ -375,7 +379,7 @@
           ]
         }
       },
-      order: [[7, 'desc']],
+      order: [[1, 'asc']],
       paging: false,
       scrollCollapse: true,
       scrollY: '800px',
@@ -383,10 +387,6 @@
       fixedColumns: {
         leftColumns: 5
       },
-      /*select: {
-        style: 'os',
-        selector: 'td:first-child'
-      },*/
       data: data,
       columns: columns,
       columnDefs: [
@@ -423,32 +423,22 @@
     } );
 
     // Add event listener for opening and closing details
-table.on('click', 'td.dt-control', function (e) {
-    let tr = e.target.closest('tr');
-    let row = table.row(tr);
+    table.on('click', 'td.dt-control', function (e) {
+        let tr = e.target.closest('tr');
+        let row = table.row(tr);
 
-    if (row.child.isShown()) {
-        // This row is already open - close it
-        row.child.hide();
-    }
-    else {
-        // Open this row
-        row.child(format(row.data())).show();
-        //row.child(panel(row.data())).show();
-    }
-});
+        if (row.child.isShown()) {
+            // This row is already open - close it
+            row.child.hide();
+        }
+        else {
+            // Open this row
+            row.child(format(row.data())).show();
+            //row.child(panel(row.data())).show();
+        }
+      });
+    });
 
-
-  });
-
-  /*new DataTable('#example', {
-    columns: [
-        { title: 'status' },
-        { title: 'year' },
-        { title: 'authors' }
-    ],
-    data: data
-});*/
 
 </script>
 </html>
