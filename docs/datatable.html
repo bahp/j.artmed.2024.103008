@@ -1,0 +1,454 @@
+<html>
+<head>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+  <script src="https://cdn.datatables.net/buttons/3.0.1/js/dataTables.buttons.js"></script>
+  <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.dataTables.js"></script>
+  <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.colVis.min.js"></script>
+  <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css"/>
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.0.1/css/buttons.dataTables.css"></link>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap5.css"/>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+
+
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+  <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+
+  <script src="data.js"></script>
+
+  <style>
+
+    /* changes font-size in table (td, th) */
+    table.dataTable td {
+      font-size: 14px;
+    }
+
+    table.dataTable th {
+      font-size: 14px;
+    }
+
+    /*
+    table thead th {
+      transform: rotate(-45deg);
+      transform-origin: top left;
+    }*/
+
+  </style>
+
+</head>
+<body>
+
+  <div class="container-fluid" style="width:90%;">
+
+    <!-- Adding on dropdown multi-select for columns -->
+    <!--
+    <div class="row">
+      Column visibility
+      <select id='selectColumn' class="selectpicker w-100" multiple data-live-search="true">
+      </select>
+    </div>
+    -->
+
+
+    <div class="row">
+      <table id="example" class="display" width="100%"> <!-- nowrap -->
+      </table>
+    </div>
+  </div>
+
+</body>
+
+<script>
+  console.log(data)
+
+
+  // ---------------------------------------------------------
+  // Configuration
+  // ---------------------------------------------------------
+  /* Indicate columns visible by default */
+  var columnsVisible = [
+    'status', 'id', 'year', 'authors', 'title', 'tags',
+    'score', 'aim', 'ward', 'label_cat1',
+    'data available', 'code available',
+    '_labels', '_comments', '_concerns'
+  ]
+
+
+
+  /* Add additional columns */
+  var data = data.map(v => (
+    {...v,
+      _definition: v.definition !== null ? '✓' : '',
+      _comments: v.comments !== null ? '✓' : '',
+      _concerns: v.concerns !== null ? '✓' : '',
+      _data: v['data available'] == 'Yes' ? '✓' : '',
+      _code: v['code available'] == 'Yes' ? '✓' : '',
+    })
+  )
+
+  // ---------------------------------------------------------
+  // Helper methods
+  // ---------------------------------------------------------
+  function title(str) {
+    /* It would be better to implement it as a function of String */
+    return str.toLowerCase().split(' ').map(
+      w => w.charAt(0).toUpperCase() + w.slice(1)
+    ).join(' ');
+  }
+
+  function getColumns(){
+    /* Extra column for dropdown */
+    var dropdown = {
+      className: 'dt-control',
+      orderable: false,
+      data: null,
+      defaultContent: ''
+    }
+
+    /* Initialise columns */
+    for(var i = 0; i < data.length; i++){
+      let columnsArray = [dropdown];
+      var keys = Object.keys(data[i]);
+      for(k in Object.keys(data[i])){
+        if(data[i].hasOwnProperty(keys[k])){
+          columnsArray.push({
+              data: keys[k],
+              title: title(keys[k]),
+              visible: false
+          });
+        }
+      }
+      return columnsArray;
+    }
+  }
+
+
+  function populateSelect(id) {
+    /* Populate select // select.options.length/ /*/
+    var select = document.getElementById('selectColumn')
+    getColumns().map(v => v.data).forEach((e, idx) =>
+      select.options[select.options.length] = new Option(idx+'. '+e, select.options.length))
+  }
+
+  // Formatting function for row details - modify as you need
+
+
+
+  function html_pre(text) {
+    /* Formats string to HTML */
+    return '<pre style={{ "text-align": "left" }}>' + text + '</pre>'
+  }
+
+  function html_p(title, text) {
+    /* Formats paragraph to HTML */
+    return (
+      '<div class="text-muted small" style="width:fit-content;">' +
+        '<b class="mb-1">' + title + '</b>' +
+        '<p class="text-justify">' + text+ '</p>' +
+      '</div>'
+    )
+  }
+
+  function html_p_bootstrap(title, text) {
+    /* Formats paragraph to HTML */
+    return (
+      '<div class="col-sm text-muted small">' +
+        '<dt>' + title + '</dt><br>' +
+        '<p class="text-justify">' + text + '</p>' +
+      '</div>'
+    )
+  }
+
+  //'<div class="col-sm text-muted small">' +
+  //         '<dt>' + title(key) + '</dt><br>' +
+  //         '<p class="text-justify">' + d[key] + '</p></div>'
+
+
+  function html_p_fit_content(title, text) {
+     return (
+      '<div class="text-muted small" style="width:fit-content;">' +
+        '<b class="mb-1">' + title + '</b>' +
+        '<p class="text-justify">' + text + '</p>' +
+      '</div>'
+    )
+  }
+
+
+  function format_raw(d) {
+    let txt = ''
+    for (const [key, value] of Object.entries(d)) {
+      txt += `<tr><td><b>${key}:</b></td><td>${value}</td></tr>`
+    }
+    return '<table>' + txt + '</table>';
+  }
+
+  function html_dataset(d) {
+    return ('<div class="row">' + '' + '</div>')
+  }
+
+
+  function html_performance(d) {
+
+    // Columns to show
+    var c = [
+      {data: 'methods', title: 'Methods'},
+      {data: 'look back (h)', title: 'Look back (h)'},
+      {data: 'pred time (h)', title: 'Look ahead (h)'},
+      {data: 'acc', title: 'PR'},
+      {data: 'auc\nroc', title: 'ROC'},
+      {data: 'sens\ntpr\nrecall', title: 'SENS'},
+      {data: 'spec\ntnr\n1-fpr', title: 'SPEC'},
+      {data: 'ppv', title: 'PPV'},
+      {data: 'npv', title: 'NPV'},
+    ]
+
+    // Create HTML
+    html = ''
+    for (let i = 0; i < c.length; i++) {
+      html += html_p_fit_content(c[i].title, html_pre(d[c[i].data]))
+    }
+    return ('<div class="row">' + html + '</div>')
+  }
+
+
+
+  function html_description(d) {
+
+    // Columns to show
+    var c = [
+      {data: 'brief description', title: 'Description'},
+      {data: 'definition', title: 'Definition'},
+      {data: 'comments', title: 'Comments'},
+      {data: 'concerns', title: 'Concerns'},
+      {data: 'acronyms', title: 'Acronyms'},
+      {data: 'statistical', title: 'Statistical'},
+      {data: 'feature ranking', title: 'Feature Ranking'},
+    ]
+
+    // Create HTML
+    html = ''
+    for (let i = 0; i < c.length; i++) {
+      html += html_p_bootstrap(c[i].title, html_pre(d[c[i].data]))
+    }
+    return ('<div class="row">' + html + '</div>')
+  }
+
+
+  function format_row8() {
+    return `<div class="flex-row">
+  <div class="flex-column">
+    <div class="col-md-8 red">
+      Column 1
+    </div>
+    <div class="col-md-8 red">
+      Column 2
+    </div>
+  </div>
+  <div class="col-md-4 green">
+  Column 3
+  </div>
+</div>`
+  }
+
+  function format_row5(d) {
+     return ('<div class="row justify-content-md-left">' +
+          html_p('Method', html_pre(d['obs. type'])) +
+          html_p('Look-back (h)', html_pre(d['total'])) +
+          html_p('Look-ahead (h)', html_pre(d['positive'])) +
+          html_p('ACC', html_pre(d['prev (%)'])) +
+          html_p('AUCROC', html_pre(d['data'])) +
+          html_p('AUCPR', html_pre(d['variables'])) +
+        '</div>'
+     )
+  }
+
+
+  /**
+  function format_row0(d) {
+    return (
+      '<div class="container">' +
+        '<div class="row">' +
+          '<dt> AUCPR: </dt>' + '<dd>' +
+          '<pre style={{ "text-align": "left" }}>' + d['auc\nroc'] + '</pre>' + '</dd>' +
+        '</div>' +
+      '</div>'
+    )
+  }**/
+
+  function format_row1(d) {
+    return (
+      '<div class="row">' +
+        '<dt> Title: </dt>' + '<dd>' + d.title + '</dd>' +
+        '<dt> DOI: </dt>' + '<dd>' + d.doi + '</dd>' +
+      '</div>'
+    )
+  }
+
+  function format_row2(d) {
+     return (
+        '<div class="row">' +
+          format_paragraph('Brief description', d) +
+          format_paragraph('definition', d) +
+          format_paragraph('comments', d) +
+          format_paragraph('concerns', d) +
+          format_paragraph('acronyms', d) +
+          format_paragraph('Statistical', d) +
+          format_paragraph('Feature ranking', d) +
+
+        '</div>'
+     )
+  }
+
+
+  function format_paragraph(key, d) {
+    /* Format the content in paragraph column */
+    return '<div class="col-sm text-muted small">' +
+           '<dt>' + title(key) + '</dt><br>' +
+           '<p class="text-justify">' + d[key] + '</p></div>'
+  }
+
+  function format(d) {
+    /* Format how to diplay dropdown information */
+    format_raw(d)
+    return (
+        html_performance(d) + '<hr>' +
+        //html_description(d) + '<hr>' +
+        format_row2(d) + '<hr>' +
+        //format_row1(d) + '<br>' +
+        //format_row5(d) + '<br>' +
+        format_raw(d)
+    );
+  }
+
+
+
+
+
+  function html_a(data, row) {
+    return '<a href="' +  row.doi + '" target="_blank">' + data + '</a>'
+  }
+
+  function html_status(data, row) {
+    var color = (row.status == 'Completed') ? 'text-success' : ''
+    return '<span class="' + color + '">' + data + "</span>"
+  }
+
+  $(document).ready(function() {
+
+    // Get columns
+    var columns = getColumns()
+
+    // Edit visible columns
+    for (let i = 0; i < columns.length; i++) {
+      if (columnsVisible.includes(columns[i].data))
+        columns[i].visible = true
+    }
+
+    // Populate own dropdown select
+    //populateSelect('selectColumn')
+
+    // Create DataTable
+    var table = new DataTable('#example', {
+      layout: {
+        topStart: {
+          buttons: [
+            'colvis',
+            //'columnsToggle'
+          ]
+        }
+      },
+      order: [[7, 'desc']],
+      paging: false,
+      scrollCollapse: true,
+      scrollY: '800px',
+      scrollX: true,
+      fixedColumns: {
+        leftColumns: 5
+      },
+      /*select: {
+        style: 'os',
+        selector: 'td:first-child'
+      },*/
+      data: data,
+      columns: columns,
+      columnDefs: [
+        { width: '20px', targets: 3 },
+        { width: '100px', targets: 4 },
+        { width: '400px', targets: 5 },
+        { width: '80px', targets: 33 },
+        { visible: true, targets: columnsVisible },
+        { render: (data, type, row) => html_pre(data), targets: [33, 35, 37, 38] },
+        { render: (data, type, row) => html_a(data, row), targets: [2]},
+        { render: (data, type, row) => html_status(data, row), targets: [1]}
+      ]
+    });
+
+    /*$('#selectColumn').on('change', function (e) {
+      console.log(e)
+      console.log($(e.value))
+    })*/
+
+
+    $("#selectColumn").on("click", "option", function() {
+        var clickedOption = $(this);
+        console.log(clickedOption)
+    });
+
+
+
+    $('a.toggle-vis').on( 'click', function (e) {
+        e.preventDefault();
+        // Get the column API object
+        var column = table.column( $(this).attr('data-column') );
+        // Toggle the visibility
+        column.visible( ! column.visible() );
+    } );
+
+    // Add event listener for opening and closing details
+table.on('click', 'td.dt-control', function (e) {
+    let tr = e.target.closest('tr');
+    let row = table.row(tr);
+
+    if (row.child.isShown()) {
+        // This row is already open - close it
+        row.child.hide();
+    }
+    else {
+        // Open this row
+        row.child(format(row.data())).show();
+        //row.child(panel(row.data())).show();
+    }
+});
+
+
+  });
+
+  /*new DataTable('#example', {
+    columns: [
+        { title: 'status' },
+        { title: 'year' },
+        { title: 'authors' }
+    ],
+    data: data
+});*/
+
+</script>
+</html>
