@@ -1,0 +1,167 @@
+\begin{table}[h!]
+    \centering
+    %\setlength{\tabcolsep}{0pt}
+    \caption{Comparison of sequential machine learning models.}
+    %\begin{threeparttable}
+    %\renewcommand{\arraystretch}{1.5} % Table row spacing.
+    %\fontsize{7}{8}\selectfont
+    %\rowcolors{2}{white}{gray!10}
+    %\fontsize{8}{9}\selectfont
+
+   %%%%%%%%%%%%%%%%%%%%%%%%%%
+   % Insert code (tblr)
+   %%%%%%%%%%%%%%%%%%%%%%%%%%
+   %\begin{threeparttable}
+   \begin{tblr}[
+      %caption = {},
+      %remark{}={Something noteworhty.},
+      %note{a} = {},
+      %note{} = {}
+    ]{
+      colspec={Q[c,m]
+               X[l,m]
+               Q[r,m]
+               Q[r,m]
+               Q[c,m]
+               Q[c,m]
+               Q[c,m]
+               Q[c,m]
+               Q[c,m]},
+      vline{6} = {0.05pt, dashed},
+      row{even} = {gray!10},
+      row{2} = {c1m},
+      %rowhead = 1,
+      %hlines = {2pt, white},
+      rowsep = 3pt,
+      colsep = 3pt,
+      cells = {font=\fontsize{7}{8}\linespread{1.00}\selectfont} % doesnt really work...
+    }
+    
+        %%%%%%%%%%%%%%%%%%%%%%
+        % Header             %
+        %%%%%%%%%%%%%%%%%%%%%%
+        \toprule
+          \textbf{R} & 
+          \textbf{Model} &
+          \textbf{LB} & 
+          \textbf{LA} & 
+          \textbf{FxT} & 
+          \textbf{ROC} & 
+          \textbf{PR} & 
+          \textbf{SENS} & 
+          \textbf{SPEC} \\ 
+        \midrule
+        \SetCell[c=9]{l} Sequential (temporal) & & & & & & & &  \\
+        {\cite{ming2023harnessing}} & \SetCell[c=8]{l} {
+            \citeauthor{ming2023harnessing}, \citeyear{ming2023harnessing} \\
+            BSI, 20850 (7.3\%) patients, 24 clinical variables, All
+        } & & & & & & & \\
+        %\cite{ming2023harnessing} & \SetCell[c=8]{l} BSI, 20850 (7.3\%) patients, 24 clinical variables, All & & & & & & &  \\
+        & {LSTM\textsuperscript{c} \\ LR } 
+        & {168h \\ NA}
+        & {0h \\ 0h}
+        & {24x7 \\ 24x1}
+        & {0.97 \\ 0.74}
+        & {0.65 \\ 0.48}
+        & {0.93 \\ 0.58} 
+        & {0.98 \\ 0.95} \\
+
+        {\cite{boner2022deep}} & \SetCell[c=8]{l} {
+            \citeauthor{boner2022deep}, \citeyear{boner2022deep} \\
+            BSI, 6557 (13.4\%), 33 clinical variables, ICU
+        } & & & & & & & \\
+        %\cite{boner2022deep} & \SetCell[c=8]{l} BSI, 6557 (13.4\%), 33 clinical variables, ICU & & & & & & &  \\
+        & {GRU \\ CNN \\ FFN} 
+        & {48h}
+        & {0h}
+        & {33x48}
+        & {0.84 \\ 0.83 \\ 0.77}
+        & {0.48 \\ 0.52 \\ 0.45}
+        & {- \\ - \\ -} 
+        & {- \\ - \\ -} \\
+
+        {\cite{kam2017learning}} & \SetCell[c=8]{l} {
+            \citeauthor{kam2017learning}, \citeyear{kam2017learning} \\
+            Sepsis-2, 5803 (6.2\%) episodes, 9 clinical variables, ICU
+        } & & & & & & & \\
+        %\cite{kam2017learning} & \SetCell[c=8]{l} Sepsis-2, 5803 (6.2\%) episodes, 9 clinical variables, ICU & & & & & & & \\
+        & {DFN \\ LSTM } 
+        & {5h}
+        & {3h}
+        & {20x5}
+        & {0.92 \\ 0.93}
+        & {- \\ -}
+        & {0.89 \\ 0.91}
+        & {0.94 \\ 0.94} \\
+
+        {\cite{futoma2017improved}} & \SetCell[c=8]{l} {
+            \citeauthor{futoma2017improved}, \citeyear{futoma2017improved} \\
+            Sepsis-2, 51697 (21.4\%) episodes, 77 clinical variables, ICU
+        } & & & & & & & \\
+        %\cite{futoma2017improved} & \SetCell[c=8]{l} Sepsis-2, 51697 (21.4\%) episodes, 77 clinical variables, ICU & & & & & & & \\
+        & {MGP + RNN-MI \\ MGP + RNN \\ RNN \\ RFC + FE \\ MEWS \\ MGP + RNN-MI \\ MGP + RNN \\ RNN \\ RFC+FE \\ MEWS} 
+        & {All}
+        & {0h \\ 0h \\ 0h \\ 0h \\ 0h \\ 12h \\ 12h \\ 12h \\ 12h \\ 12h}
+        & {\dagger}
+        & {0.90 \\ 0.81 \\ 0.77 \\ 0.86 \\ 0.73 \\ 0.79 \\ 0.74 \\ 0.72 \\ 0.70 \\ 0.65}
+        & {0.74 \\ 0.51 \\ 0.50 \\ 0.67 \\ 0.48 \\ 0.52 \\ 0.42 \\ 0.43 \\ 0.42 \\ 0.36}
+        & {- \\ - \\ - \\ - \\ - \\ - \\ - \\ - \\ - \\ -}
+        & {- \\ - \\ - \\ - \\ - \\ - \\ - \\ - \\ - \\ -} \\
+
+        {\cite{scherpf2019predicting}} & \SetCell[c=8]{l} {
+            \citeauthor{scherpf2019predicting}, \citeyear{scherpf2019predicting} \\
+            Sepsis-2, 33084 (4.56\%) episodes, 10 clinical variables
+        } & & & & & & & \\
+        %\cite{scherpf2019predicting} & \SetCell[c=8]{l} Sepsis-2, 33084 (4.56\%) episodes, 10 clinical variables & & & & & & & \\
+        & {RNN \\ RNN \\ RNN \\ InSight \\ InSight \\ InSight} % LA
+        & {20h}
+        & {3h \\ 6h \\ 12h \\  3h \\ 6h \\ 12h}
+        & {10x20}
+        & {0.81 \\ 0.79 \\ 0.76 \\  0.72 \\ 0.71 \\ 0.68} 
+        & {- \\ - \\ - \\ -  \\ - \\ -} 
+        & {0.90 \\ 0.90 \\ 0.90 \\ 0.90 \\ 0.90 \\ 0.90} 
+        & {0.47 \\ 0.45 \\ 0.39 \\ 0.31 \\ 0.29 \\ 0.24} \\
+
+        {\cite{moor2023predicting}} & \SetCell[c=8]{l} {
+            \citeauthor{moor2023predicting}, \citeyear{moor2023predicting} \\
+            Sepsis-3, 27278 (37\%) patients, 63 clinical variables
+        } & & & & & & & \\
+        %\cite{moor2023predicting} & \SetCell[c=9]{l} Sepsis-3, 27278 (37\%) patients, 63 clinical variables & & & & & & & \\
+        %& { SIRS \\ SOFA \\ LGBM-CVS \\ LGBM-HOS \\ GRU-CVS \\ GRU-HOS \\ ATTN-CVS \\ ATTN-HOS \\ ATTN-HOS-POOL} 
+        %& {?}
+        %& {?}
+        %& %{5 \\ 6 \\ 1269 \\ 1269 \\ 186 \\ 186 \\ 186 \\ 186}
+        %& {0.63 \\ 0.71 \\ 0.89 \\ 0.75 \\ 0.86 \\ 0.76 \\ 0.92 \\ 0.84 \\ 0.76}
+        %& {- \\ - \\ - \\ - \\ - \\ - \\ - \\ -}
+        %& {- \\ - \\ - \\ - \\ - \\ - \\ - \\ -}
+        %& {- \\ - \\ - \\ - \\ - \\ - \\ - \\ - \\ 0.8} \\
+
+        & { SIRS \\ SOFA \\ LGBM \\ GRU \\ ATTN \\ ATTN-POOL} 
+        & {16h}
+        & {6h}
+        & {5 \\ 8 \\ 1269x1 \\ \dagger \\ \dagger \\ \dagger}
+        & {0.63 \\ 0.71 \\ 0.75 \\ 0.76 \\ 0.84 \\ 0.76}
+        & {- \\ - \\ - \\ - \\ - \\ -}
+        & {- \\ - \\ - \\ - \\ - \\ -}
+        & {- \\ - \\ - \\ - \\ - \\  0.80} \\
+
+    \bottomrule
+    \end{tblr}
+
+    \begin{tablenotes}
+        \footnotesize
+        \item \textbf{LA:} Look-ahead (hours); \textbf{LB:} Look-back (hours); \textbf{R:} Reference; \textbf{MI:} Missing Indicator; \textbf{FE:} Feature Engineering; \textbf{LR:} Logistic Regression; \textbf{LSTM:} Long Short Term Memory; \textbf{GRU:} Gated Recurrent Unit; \textbf{CNN:} Convolutional Neural Network; \textbf{FFN:} Feed Forward Neural Network; \textbf{MGP:} Multi-Output Gaussian Process; \textbf{RFC:} Random Forest Classifier; \textbf{ATTN:} Attention Layer; \textbf{LGBM:} Light Gradient Boosting Machine; \textbf{FxT:} Features inputed to the model x Timesteps; 
+        \item[] \textsuperscript{\textdagger} Unclear number of features due to complex feature engineering.
+        %\item \textsuperscript{\textbf{a}}Clinical trial; \textsuperscript{\textbf{b}}Something; \textsuperscript{\textbf{c}}For that study, statistically significant differences between cohorts; \textsuperscript{\textbf{d}} It uses a cohort of patients with sepsis, which is equivalent to SIRS + suspicion of infection until 2016. % \ref{tab:clinical-sepsis-definitions}
+        %\item[a] Averaged score obtained from review and meta-analysis of various studies in the literature.
+        %\item[b] Full table with 21 biochemical markers available in original article.
+        %\item[c] For that study, statistically significant differences between cohorts.
+    \end{tablenotes}
+    %\end{threeparttable}
+
+    %%%%%%%%%%%%%%%%%%%%%%
+    % End content (tblr)
+    %%%%%%%%%%%%%%%%%%%%%%
+    
+\label{tab:tblr-performance-ml-part3}
+\end{table}

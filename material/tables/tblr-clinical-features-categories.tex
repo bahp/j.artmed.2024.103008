@@ -1,0 +1,323 @@
+%
+% Note: If using in appendix, keep only the longtblr
+% Note: If using within text, it needs some editing.
+
+
+%\begin{table*}[bp!]
+%    \centering
+    %\setlength{\tabcolsep}{0pt}
+%    \caption{Timeline of clinical scoring systems (tblr).}
+    %\begin{threeparttable}
+    %\renewcommand{\arraystretch}{1.5} % Table row spacing.
+    %\fontsize{7}{8}\selectfont
+    %\rowcolors{2}{white}{gray!10}
+    %\fontsize{8}{9}\selectfont
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Insert code (tblr)
+    %%%%%%%%%%%%%%%%%%%%%%%%%%
+    %\begin{threeparttable}
+    \begin{longtblr}[
+      caption = {Overview of biochemical, physical, and surrogate markers grouped by organ system.},
+      %remark{}={Something noteworhty.},
+      note{} = {%\footnotesize
+        \textbf{GI:} Gastroinstetinal Tract; \textbf{PTSD:} Post-Traumatic Stress Disorder ; \textbf{CKD:} Chronic Kidney Disease; \textbf{CHF:} Congestive Heart Failure; \textbf{CVC:} Central Venous Catheter; \textbf{COPD:} Chronic Obstructive Pulmonary Disease; \textbf{ENDO:} Endotracheal Tube; \textbf{CVS:} Cardiovascular Disease; \textbf{GCS:} Glasgow Coma Score; \textbf{AVPU:} Alert, Voice, Pain, Unresponsive; \textbf{BMI:} Body Mass Index;
+        \textbf{HD:} Heart Disease; \textbf{SOFA:} Sequential Organ Failure Assessment; \textbf{SIRS:} Systemic Inflammatory Response Syndrome; \textbf{CVD:} Cardiovascular Disease;},
+      %note{a} = {Bands are an immature form of neutrophils},
+      %note{b} = {\textbf{Erytrocites} aka Red Blood Cells; \textbf{Leucocytes} aka White Blood Cells; \textbf{Thrombocytes} aka Platelets},
+      %note{c} = {Albumin is also associated with the cardiovascular system}
+    ]{
+      colspec={Q[c,m,2.1cm]
+               Q[c,m,1.9cm]
+               Q[c,m,5.5cm]
+               Q[c,m,3.6cm]
+               Q[c,m,2.8cm]},
+      %vline{8} = {0.05pt, dashed},
+      %hlines = {2pt, white},
+      %rowhead = 1,
+      rowsep = 5pt,
+      colsep = 2pt,
+      row{even} = {gray!10},
+      row{1} = {gray!10},
+      % color whole row
+      row{2,3} = {c1},
+      row{4,5} = {c2},
+      row{6,7,8} = {c3},
+      row{9} = {c4},
+      row{10} = {c5},
+      row{11,12,13} = {c6},
+      row{14,15} = {c7},
+      row{16,17,18} = {c8},
+      % color just first cell
+      cell{2,3}{1} = {color1!80!white},
+      cell{4,5}{1} = {color2!80!white},
+      cell{6,7,8}{1} = {color3!80!white},
+      cell{9}{1} = {color4!80!white},
+      cell{10}{1} = {color5!80!white},
+      cell{11,12,13}{1} = {color6!80!white},
+      cell{14,15}{1} = {color7!80!white},
+      cell{16,17,18}{1} = {color8!80!white},
+      % white lines
+      hlines = {2pt, white},
+      vlines = {2pt, white},
+      %cells= {font = \fontsize{5}{6}\selectfont}
+      %cells = {font=\footnotesize\linespread{0.84}\selectfont}
+      cells = {font=\fontsize{7}{8}\linespread{1.00}\selectfont} % doesnt really work...
+    }
+    
+        \toprule
+            \textbf{System} & 
+            \textbf{Component} & 
+            \textbf{Biochemical Marker} & 
+            \textbf{Physical Marker} & 
+            \textbf{Surrogate Marker} \\ %\midrule
+    
+        \SetCell[r=2]{c} Immune
+        & Lymphatic   
+        & {Leukocytes (WBC),
+           Erythrocytes (RBC), \\
+           Thrombocytes (PLT),
+           Monocytes (MONO), \\
+           Eosinophils (EOS),
+           Neutrophils (NEUT), \\
+           Lymphocytes (LYMPH),
+           Basophils (BASO) } 
+        & {}
+        & \SetCell[r=2]{c} {
+            Cancer \\ 
+            Immunosupressed \\ 
+            redness (rubor) \\ 
+            swelling (tumour) \\ 
+            joint pain/stiffness \\ 
+            loss of function}
+        \\
+        
+        & Inflammatory 
+        & C-Reactive Protein (CRP), Procalcitonin (PCT), IL-6
+        & 
+        & \\
+        
+        %%%%%%%%%%%%%%%%%%
+        %% Respiratory  %%
+        %%%%%%%%%%%%%%%%%%
+        \SetCell[r=2]{c} Respiratory
+        & Lungs
+        & {Fraction of inspired oxygen (FiO2) \\ Endtidal carbon dioxide (EtCO2)}
+        & Respiratory Rate (RR)
+        & \SetCell[r=2]{c} {
+            Cough \\
+            Chest pain \\
+            Crackles \\
+            Respiratory Distress \\
+            Shortness of breath \\
+            Ventilation support \\ 
+            Minute-Ventilation \\
+            Pleural Efussion \\
+            Hypoxia \\
+            COPD
+            %Endotracheal Tube (ENDO) 
+         } 
+        \\
+        
+        % Blood
+        & Blood
+        & {Oxygen saturation – arterial (SaO2, O2SAT) \\
+           Oxygen saturation – venous (SvO2) \\
+           Partial pressure of oxygen – ambient (PO2) \\
+           Partial pressure of oxygen – arterial (PaO2) \\
+           Partial pressure of oxygen – venous (PvO2) \\
+           Partial pressure of carbon dioxide – ambient PCO2) \\
+           Partial pressure of carbon dioxide – arterial (PaCO2) \\
+           Partial pressure of carbon dioxide – venous (PvCO2)}
+        % Oxygen Flow???? 
+        & {Peripheral capillary \\ oxygen saturation (SPO2)}
+        & \\
+        
+        %%%%%%%%%%%%%%%%%%%%
+        %% Cardiovascular %%
+        %%%%%%%%%%%%%%%%%%%%
+        \SetCell[r=3]{c} Cardiovascular 
+        & Heart  
+        & Troponin Test
+        & Heart Rate (HR) 
+        & \SetCell[r=3]{c}{
+           Palpitations \\ 
+           Tachycardia \\
+           Bradycardia \\ 
+           Coronary heart disease \\
+           Ischemic heart disease \\ 
+           %chest pain \\
+           %Endocarditis \\
+           %Atherosclerosis \\
+           %Pericarditis
+    
+           Use of vasopressors \\ 
+           CVD, CHF \\
+           Hypertension \\ Hypotension \\ Anemia
+           } 
+        \\
+        
+        % Circulatory
+        & Blood
+        & {
+            Platelets (PLT),
+            Haematocrits (HCT), \\
+            Haemoglobin (HGB),
+            Fibrinogen (FIB) \\
+            International Normalized Ratio (INR) }
+        %DDimer Test 
+        & 
+        & 
+        %Central Venous Catheter (CVC)
+        \\
+        
+        % Blood vessels
+        & {Blood vessels} 
+        & {Bands, Prothrombin Time (PT), \\
+           Partial Thromboplastin Time (PTT), \\
+           Activated Partial Thromboplastin Time (aPTT), \\
+           Mean Corpuscular HGB Volume (MCV), \\
+           Mean Corpuscular HGB Level (MCH), \\
+           Mean Corpuscular HGB Concentration (MCHC), \\
+           Red cell Distribution Width (RDW)}
+        & {Systolic Blood Pressure (SBP) \\
+           Diastolic Blood Pressure (DBP) \\
+           Pulse Pressure (PP) \\
+           Mean Arterial Pressure (MAP)}
+           % Arterial Blood Pressure (ABP) 
+        &
+        \\
+        
+        %%%%%%%%%%%%%%%%%%
+        %% Renal        %%
+        %%%%%%%%%%%%%%%%%%
+        Renal 
+        & Kidney 
+        & {Urea \\ Creatinine (CRE) \\ Blood Urea Nitrogen (BUN)}
+        %Estimated Glomerular Filtration & 
+        & {Urine output}
+        & {Foley Catheter \\ Acute kidney injury \\ Renal failure \\ CKD}
+        \\
+        
+        % Bladder
+        %\cellcolor{color4} & Bladder
+        %& 
+        %& Urine output 
+        %& 
+        %& \\
+        
+        %%%%%%%%%%%%%%%%%%
+        %% Metabolic    %%
+        %%%%%%%%%%%%%%%%%%
+        Metabolic 
+        & Name 
+        & {Glucose, 
+           Cholesterol,
+           Sodium (Na), 
+           Potassium (K), 
+           Magnesium (Mg),
+           Calcium (Ca),
+           Lactate (LAC), 
+           Lactate Dehydrogenase (LDA), 
+           Creatine Kinase (CK), 
+           Creatine Kinase MB (CKMB), 
+           Total Carbon Dioxide (TCO2), 
+           Low-density Lipoprotein (LDL), 
+           Blood gas pH (PH)
+           % Lipids
+           %Chloride
+           %Phosphate,
+           %Phosphorus?? Same as phosphate?
+           %Bicarbonate (ACID based balance)
+           %Carboni Acid (H2CO3) 
+        }
+        &  % phys
+        & { Obesity \\ Diabetes \\ Hyperglicemia}
+        \\
+        
+        %%%%%%%%%%%%%%%%%%
+        %% Digestive    %%
+        %%%%%%%%%%%%%%%%%%
+        \SetCell[r=2]{c} Digestive 
+        & Liver 
+        & {Albumin (ALB)\textsuperscript{c},
+           Bilirubin (BIL), \\
+           Aspartate aminotransferase (AST), \\
+           Alanine aminotransferase (ALT)}
+        %Total Bilirubin (BIL\_T) \break
+        %Direct Bilirubin (BIL\_D) 
+        &
+        &
+        Jaundice, Cirrhosis\break
+        Fatty liver disease\break
+        Hepatitis A/B/C
+        \\
+        
+        % Pancreas
+        & Pancreas 
+        & 
+        & \SetCell[c=2]{c} {Pancreatic injury, Pancreatitis} 
+        & 
+        \\
+        
+        % Gastroinstetinal Tract
+        \SetCell[r=1]{c} Digestive & GI 
+        & 
+        & \SetCell[c=2]{c} Diarrhoea, Abdominal pain, Nausea, Vomiting %Sore throat 
+        & 
+        \\
+        
+        %%%%%%%%%%%%%%%%%%
+        %% Neurological %%
+        %%%%%%%%%%%%%%%%%%
+        \SetCell[r=2]{c} Neurological 
+        & Brain
+        & Cholinesterase (ChEs) 
+        & \SetCell[c=2]{c} {Delirium, Fatigue, Agitation, Depression, PTSD, Ictus} %Brain Fog
+        &  
+        \\
+        
+        % Sensory organs
+        & {Sensory organs}
+        &
+        & \SetCell[c=2]{c} GCS, AVPU
+        &
+        \\
+        
+        %%%%%%%%%%%%%%%%%%
+        %% Other        %%
+        %%%%%%%%%%%%%%%%%%
+        \SetCell[r=2]{c} Other & Thermoregulatory & & Body Temperature (BT) & Fever \\
+        %\cellcolor{color8}       & Locomotor & Calcium (Ca) & Height, Weight, BMI & & \\
+        & Demographics & & \SetCell[c=2]{c}{Age, Gender, Ethnicity, Height, Weight, BMI} \\
+        & Management & & \SetCell[c=2]{c}{
+            Ward, Length of stay (LOS), \\
+            Blood culture (BC), \\
+            X-Ray, Electrocardiogram (ECG), \\
+            Computerized Tomography (CT), Ultrasound, \\
+            Use of steroids, Use of antimicrobials, \\
+            Central Venous Cathether (CVC) 
+            } \\
+        & Scores & & \SetCell[c=2]{c}{SOFA, SIRS} \\
+        
+    \bottomrule
+    \end{longtblr}
+
+    %\begin{tablenotes}
+    %    \footnotesize
+    %    \item[] \textbf{GUAPOGI:} Gastroinstetinal Tract; \textbf{PTSD:} Post-Traumatic Stress Disorder ; \textbf{CKD:} Chronic Kidney Disease; \textbf{CHF:} Congestive Heart Failure; \textbf{CVC:} Central Venous Catheter; \textbf{COPD:} Chronic Obstructive Pulmonary Disease; \textbf{ENDO:} Endotracheal Tube; \textbf{CVS:} Cardiovascular Disease; \textbf{GCS:} Glasgow Coma Score; \textbf{AVPU:} Alert, Voice, Pain, Unresponsive; \textbf{BMI:} Body Mass Index; \textbf{HD:} Heart Disease; \textbf{SOFA:} Sequential Organ Failure Assessment; \textbf{SIRS:} Systemic Inflammatory Response Syndrome; \textbf{CVD:} Cardiovascular Disease;
+    %    \item[a] Bands are an immature form of neutrophils
+    %    \item[b] \textbf{Erytrocites} aka Red Blood Cells; 
+    %             \textbf{Leucocytes} aka White Blood Cells; 
+    %             \textbf{Thrombocytes} aka Platelets
+    %    \item[c] cardiovascular
+    %\end{tablenotes}        
+    %\end{threeparttable}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Insert code (tblr)
+    %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\label{tab:clinical-features-categories}
+%\end{table*}

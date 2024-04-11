@@ -1,0 +1,102 @@
+\begin{table}[h!]
+    \centering
+    %\setlength{\tabcolsep}{0pt}
+    \caption{Comparison of static machine learning models.}
+    %\begin{threeparttable}
+    %\renewcommand{\arraystretch}{1.5} % Table row spacing.
+    %\fontsize{7}{8}\selectfont
+    %\rowcolors{2}{white}{gray!10}
+    %\fontsize{8}{9}\selectfont
+
+   %%%%%%%%%%%%%%%%%%%%%%%%%%
+   % Insert code (tblr)
+   %%%%%%%%%%%%%%%%%%%%%%%%%%
+   %\begin{threeparttable}
+   \begin{tblr}[
+      %caption = {},
+      %remark{}={Something noteworhty.},
+      %note{a} = {},
+      %note{} = {}
+    ]{
+      colspec={Q[c,m]
+               X[l,m]
+               Q[r,m]
+               Q[r,m]
+               Q[c,m]
+               Q[c,m]
+               Q[c,m]
+               Q[c,m]
+               Q[c,m]},
+      vline{6} = {0.05pt, dashed},
+      row{even} = {gray!10},
+      row{2} = {c1m},
+      %rowhead = 1,
+      %hlines = {2pt, white},
+      rowsep = 3pt,
+      colsep = 3pt,
+      cells = {font=\fontsize{7}{8}\linespread{1.00}\selectfont} % doesnt really work...
+    }
+    
+        %%%%%%%%%%%%%%%%%%%%%%
+        % Header             %
+        %%%%%%%%%%%%%%%%%%%%%%
+        \toprule
+          \textbf{R} & 
+          \textbf{Model} &
+          \textbf{LB} & 
+          \textbf{LA} & 
+          \textbf{FxT} & 
+          \textbf{ROC} & 
+          \textbf{PR} & 
+          \textbf{SENS} & 
+          \textbf{SPEC} \\ 
+        \midrule
+        \SetCell[c=9]{l} Static & & & & & & & & \\
+        \cite{hernandez2017supervised} & \SetCell[c=8]{l} {
+            \citeauthor{hernandez2017supervised}, \citeyear{hernandez2017supervised} \\
+             Positive culture\textsuperscript{a}, 540.871 (4.3\%) daily profiles, 6 clinical variables, All
+        } & & & & & & & \\
+        %\cite{hernandez2017supervised} & \SetCell[c=8]{l} Positive culture\textsuperscript{a}, 540.871 (4.3\%) daily profiles, 6 clinical variables, All & & & & & & & \\
+        & {SVM \\ RFC \\ DTC \\ GNB \\ SVM prospective~\cite{10.1093/jac/dky514}} 
+        & {NA}
+        & {0h}
+        & {6x1}
+        & {0.83 \\ 0.82 \\ 0.78 \\ 0.81 \\ 0.84}
+        & {0.88 \\ 0.88 \\ 0.88 \\ 0.87 \\ - }
+        & {0.75 \\ 0.73 \\ 0.64 \\ 0.73 \\ 0.89}
+        & {0.91 \\ 0.91 \\ 0.96 \\ 0.90 \\ 0.63} \\
+
+        \cite{hernandez2018data} & \SetCell[c=8]{l} {
+            \citeauthor{hernandez2018data}, \citeyear{hernandez2018data} \\
+             Bacteremia, 518.805 (1\%) daily profiles, 6 clinical variables, All
+        } & & & & & & & \\
+        %\cite{hernandez2018data} & \SetCell[c=8]{l} Bacteremia, xxx (xx) daily profiles, 6 clinical variables, All & & & & & & & \\
+        & {SVM \\ RFC \\ DTC \\ GNB} 
+        & {NA}
+        & {0h}
+        & {6x1}
+        & {0.88 \\ 0.85 \\ 0.81 \\ 0.80}
+        & {0.85 \\ 0.85 \\ 0.82 \\ 0.79}
+        & {0.79 \\ 0.54 \\ 0.49 \\ 0.47}
+        & {0.81 \\ 0.92 \\ 0.92 \\ 0.89} \\
+        
+    \bottomrule
+    \end{tblr}
+
+    \begin{tablenotes}
+        \footnotesize
+        \item \textbf{LA:} Look-ahead (h); \textbf{LB:} Look-back (h); \textbf{R:} Reference;
+        \item \textsuperscript{\textbf{a}}Positive microbiology culture in any specimen type.
+        %\textsuperscript{\textbf{b}}Something; \textsuperscript{\textbf{c}}For that study, statistically significant differences between cohorts; \textsuperscript{\textbf{d}} It uses a cohort of patients with sepsis, which is equivalent to SIRS + suspicion of infection until 2016. textsuperscript{\textbf{u}} Unfortunately cannot be redone because it uses hard labels which funnly have changed from SIRS to SOFA. Note SIRS obtained highest score, to SOFA which obtained lower score % \ref{tab:clinical-sepsis-definitions}
+        %\item[a] Averaged score obtained from review and meta-analysis of various studies in the literature.
+        %\item[b] Full table with 21 biochemical markers available in original article.
+        %\item[c] For that study, statistically significant differences between cohorts.
+    \end{tablenotes}
+    %\end{threeparttable}
+
+    %%%%%%%%%%%%%%%%%%%%%%
+    % End content (tblr)
+    %%%%%%%%%%%%%%%%%%%%%%
+    
+\label{tab:tblr-performance-ml-part1}
+\end{table}

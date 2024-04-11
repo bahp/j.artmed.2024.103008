@@ -1,0 +1,105 @@
+\begin{table*}[bp!]
+    \centering
+    %\setlength{\tabcolsep}{0pt}
+    \caption{Timeline of clinical definitions for blood-related conditions.}
+    %\begin{threeparttable}
+    %\renewcommand{\arraystretch}{1.5} % Table row spacing.
+    %\fontsize{7}{8}\selectfont
+    %\rowcolors{2}{white}{gray!10}
+    %\fontsize{8}{9}\selectfont
+
+   %%%%%%%%%%%%%%%%%%%%%%%%%%
+   % Insert code (tblr)
+   %%%%%%%%%%%%%%%%%%%%%%%%%%
+   \begin{tblr}[
+      caption = {Timeline of clinical definitions for sepsis.},
+      %remark{}={Something noteworhty.},
+      note{a} = {TRISS II is also denotes as Revised Trauma Score (RTS)?},
+      note{} = { %\footnotesize
+        \textbf{WHO:} World Health Organization; \textbf{CDC/NHSN:} Centers for Disease Control and Prevention /National Healthcare Safety Network; \textbf{CLSI:} Clinical and Laboratory Standards Institute; \textbf{BSI:} Bloodstream Infection; \textbf{SIRS:} Systemic Inflammatory Response Syndrome; \textbf{SOFA:} Sequential Organ Failure Assessment;
+      }
+    ]{
+      colspec={Q[r,m]
+               Q[c,m]
+               Q[c,m]
+               Q[l,m]
+               X[l,m] % uses remaining space
+               Q[c,m,0.3cm]
+               Q[c,m,0.3cm]
+               Q[c,m,0.3cm]
+               Q[c,m,0.3cm]
+               Q[c,m,0.3cm]
+               Q[c,m,0.3cm]
+               Q[c,m,0.3cm]
+               Q[c,m,0.3cm]},
+      vline{6} = {0.05pt, dashed},
+      row{even} = {gray!10},
+      cell{1-23}{6} = {c1},
+      cell{1-23}{7} = {c2},
+      cell{1-23}{8} = {c3},
+      cell{1-23}{9} = {c4},
+      cell{1-23}{10} = {c5},
+      cell{1-23}{11} = {c6},
+      cell{1-23}{12} = {c7},
+      cell{1-23}{13} = {c8},
+      cell{1}{6} = {color1!80!white},
+      cell{1}{7} = {color2!80!white},
+      cell{1}{8} = {color3!80!white},
+      cell{1}{9} = {color4!80!white},
+      cell{1}{10} = {color5!80!white},
+      cell{1}{11} = {color6!80!white},
+      cell{1}{12} = {color7!80!white},
+      cell{1}{13} = {color8!80!white},
+      %rowhead = 1,
+      %hlines = {2pt, white},
+      rowsep = 3pt,
+      colsep = 3pt,
+      cells = {font=\fontsize{7}{8}\linespread{1.00}\selectfont} % doesnt really work...
+    }
+    
+    %%%%%%%%%%%%%%%%%%%%%%
+    % Header             %
+    %%%%%%%%%%%%%%%%%%%%%%
+    \toprule
+      \textbf{} & \textbf{Year} & \textbf{Acronym} &
+      \textbf{N} & \textbf{Definition} & 
+      \rotatebox{90}{\textbf{Immune}} &
+      \rotatebox{90}{\textbf{Respiratory}} & 
+      \rotatebox{90}{\textbf{Cardiovascular}\phantom{0}} & 
+      \rotatebox{90}{\textbf{Renal}} &
+      \rotatebox{90}{\textbf{Metabolic}} & 
+      \rotatebox{90}{\textbf{Digestive}} &
+      \rotatebox{90}{\textbf{Neurological}} & 
+      \rotatebox{90}{\textbf{Other}} \\ 
+    \midrule
+
+    %%%%%%%%%%%%%%%%%%%%%%
+    % Clinical scores    %
+    %%%%%%%%%%%%%%%%%%%%%%
+    & & Bacteremia & 1 & Blood culture with significant pathogen (see WHO\cite{world2017global}, CDC/NHSN\cite{horan2008cdc}, or CLSI\cite{humphries2018clsi}) & & & & & & & & \checkmark \\
+    
+    & & BSI & 1\textsuperscript{+} & Bacteremia + Signs of infection & & & & & & & & \checkmark \\
+    
+    \cite{angus2016framework}& 1991 & SEPSIS-1 &  5 & SIRS & 
+    \checkmark & \checkmark & \checkmark & & & & & \checkmark \\
+
+    \cite{angus2016framework}& 2001 & SEPSIS-2 & 6 & Suspected Infection + SIRS &
+    \checkmark & \checkmark & \checkmark & & & & & \checkmark \\
+    
+    \cite{angus2016framework}
+    & 2016 & SEPSIS-3 & 9 & Suspected Infection + SOFA & 
+    & \checkmark & \checkmark & \checkmark & & \checkmark & \checkmark & \checkmark  \\
+        
+    \bottomrule
+    \end{tblr}
+
+
+    \begin{tablenotes}
+        \footnotesize
+        \item \textbf{BSI:} Blood-stream infection; \textbf{N:} number of clinical variables; \textbf{WHO:} World Health Organization; \textbf{CDC/NHSN:} Centers for Disease Control and prevention / National Healthcare Safety Network; \textbf{CLSI:} Clinical and Laboratory Standards Institute; \textbf{SIRS:} Systemic Inflammatory Response Syndrome; \textbf{SOFA:} Sequential Organ Failure Assessment;
+     
+    \end{tablenotes}
+
+    
+\label{tab:clinical-definitions-sepsis}
+\end{table*}

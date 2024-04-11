@@ -1,0 +1,150 @@
+%  New datasets required and public data \\ - DONE
+%   Variability in definitions over time, careful! \\ - DONE
+%   Lack of continuous labelling, difficult to see within the path \\ DONE
+%  Limited consideration of the management pathway and features available at each stage \\ DONE
+%  Too many features, often unavaiable included. algorithm learning missing patterns \\ Done
+%     Numerous studies showed data leakage \\ DONE
+%   Limited understanding of mdoels performance as only generic metrics (AUC, ..) are presented \\ DONE
+%   Most mdoels are useless after treatment initiated \\ DONE
+%   Information available varies across timepoints DONE
+%   It is a continuous journey. Start of treatment is just the beginning of the diafgnosit journey. Are we able to %accumulate new data to refine and provide info? \\ DONE
+%    Features focus on organ dysfunction and not diagnosis of infection \\ DONE
+%     Studies focus on later stages of disease, sepsis.\\ DONE
+%    Including temporal information into conventional machine learning appears to enhance performance \\ DONE
+%  Sequential models accounting for temporality show minimal performance inprovement and difficult implementation \\ DONE
+%    Not enought data for sequential machine learning models \\
+%  New ways of collecting granular data, such as wearables or microneedles required - DONE
+%    Research on early stages of disease limited.\\ DONE
+%   Early stages (biochemical), medium stages (symptoms), severe stages (organ dsfunction)\\
+% the start of the treatment is just the beginning of the diagnostic journey, and are things that happen thereafert. so are we able to continue accumulate that data that can help confirm, refute or refine our initial decisions \\ DONE
+
+
+
+\begin{table*}[h!]
+    \centering
+    \caption{Essential takeaways from the discussion, recommendations, and opportunities.}
+    \begin{tblr}{ccc}[colsep = 2pt,]
+        \begin{tblr}[T]{
+            colspec={Q[l,m,5.25cm]},
+            vline{8} = {0.05pt, dashed},
+            row{even} = {gray!10},
+            %rowhead = 1,
+            %hlines = {2pt, white},
+            cell{1}{1} = {c1},
+            cell{6}{1} = {c1},
+            rowsep = 3pt,
+            colsep = 3pt,
+            cells = {font=\fontsize{7}{8}\linespread{1.00}\selectfont}
+        }
+           %%%%%%%
+           \toprule
+           \SetCell[c=1]{c} Datasets \\
+           \midrule
+        
+           {\textbf{Limited public, diverse, and linked datasets} \\ \vspace{0.1cm} \\ 
+           There is a scarcity of publicly available and well-curated healthcare datasets, making it difficult to replicate findings and develop effective models. Additionally, data often lacks diversity and continuity, hindering the use of sequential models.} \\
+    
+           {\textbf{Handle clinical codes carefully} \\ \vspace{0.1cm} \\ Clinical classification systems can be useful for modeling and research, but it is important to use them with caution as they can vary between regions and healthcare systems and they undergo regular updates as our understanding of diseases evolves.} \\
+    
+           {\textbf{Need for continuous data labelling} \\ \vspace{0.1cm} \\ Existing datasets often lack continuous labelling for time series data, making it challenging to use supervised learning techniques effectively. Information available varies across time points, making it difficult to track disease progression. } \\ \\
+
+           %%%%%%%
+           \midrule
+           \SetCell[c=1]{c} Feature selection \\
+           \midrule
+
+           {\textbf{Oversight of clinical management pathway} \\ \vspace{0.1cm} \\ Studies often neglect the clinical management pathway to select the appropriate predictors. Including features aligned with the management pathway and available at each stage could improve model performance and feasibility of implementation in clinical practice.} \\
+            
+           {\textbf{Be realistic selecting predictors} \\ \vspace{0.1cm} \\ The selection of features for machine learning models is important, and factors such as relevance, accessibility, data quality, and frequency of updates should be considered. Feature selection should also be mindful of practicality and avoid biases towards unrealistic data availability.} \\
+            
+           {\textbf{Be careful with data leakage} \\ \vspace{0.1cm} \\ Numerous studies inadvertently leaked future information that was not available at the time of assessment (time leakage) or used clinical variables that were part of the label definition (target leakage).} \\
+
+           \bottomrule
+           
+        \end{tblr}
+         
+         &
+
+    \begin{tblr}[T]{
+            colspec={Q[l,m,5.25cm]},
+            vline{8} = {0.05pt, dashed},
+            row{even} = {gray!10},
+            %rowhead = 1,
+            %hlines = {2pt, white},
+            cell{1}{1} = {c1},
+            rowsep = 3pt,
+            colsep = 3pt,
+            cells = {font=\fontsize{7}{8}\linespread{1.00}\selectfont}
+        }
+
+           %%%%%%%
+           \midrule
+           \SetCell[c=1]{c} Model validation \\
+           \midrule
+
+           {\textbf{Embrace structured and thorough reporting} \\ \vspace{0.1cm} \\ Studies primarily rely on generic metrics like area under the ROC, sensitivity, and specificity which often provide insufficient insights. Aim for a structure and clear reporting, including inclusion criteria, label definitions, experimental setup, and performance metrics in diverse scenarios.} \\
+    
+           {\textbf{Describe model's behaviour} \\ \vspace{0.1cm} \\ Feature importance can be a valuable tool, but it is important to scrutinize the results and question them to ensure they are valid. Assess other aspects of model behavior, such as probability calibration and temporal decay.} \\
+        
+           {\textbf{Capturing dynamics boosts performance} \\ \vspace{0.1cm} \\ Conventional machine learning models adopting strategies to account for the temporal aspect of data tend to provide better performance indicating that temporal information is relevant. } \\
+
+           {\textbf{Existing limitations with sequential models} \\ \vspace{0.1cm} \\ Research has gravitated to sequential models to take advantage of temporal information, but the drawbacks associated tend to outweigh their advantages. The performance gains are minimal, and in many cases worse when using external datasets. This is often because there is not enough good quality and granular data available to train these data-hungry models properly. Moreover, even if these models worked well, adapting them to existing healthcare systems presents a big obstacle.} \vspace{0.15cm}
+
+           %Model Implementation & Scalability & Sequential models underperform and face implementation challenges	While incorporating temporal information appears to enhance performance, sequential models haven't shown significant improvement over traditional models. They are also difficult to implement due to data limitations and real-world constraints. \\
+           %Model Behavior	&  Assess beyond accuracy	& In addition to accuracy, it is important to assess other aspects of model behavior, such as probability calibration and temporal decay.\\
+           %Reporting& 	Importance of clear reporting& 	It is important to clearly report the experimental setup in research articles, including the inclusion criteria, label definitions, clinical variables, and feature transformations.\\
+          %Clinical Impact	&  Consider broader impact	&  When evaluating machine learning models, it is important to consider their broader impact, such as on false alerts, alert fatigue, and human behavior.\\
+
+          \bottomrule
+           
+        \end{tblr}
+
+        &
+
+        
+        \begin{tblr}[T]{
+            colspec={Q[l,m,5.25cm]},
+            vline{8} = {0.05pt, dashed},
+            row{even} = {gray!10},
+            %rowhead = 1,
+            %hlines = {2pt, white},
+            cell{1}{1} = {c1},
+            rowsep = 3pt,
+            colsep = 3pt,
+            cells = {font=\fontsize{7}{8}\linespread{1.00}\selectfont}
+         }
+
+            %%%%%%%
+            \toprule
+            \SetCell[c=1]{c} Opportunities \\
+            \midrule
+            
+            {\textbf{Clinical information available varies across time points} \\ \vspace{0.1cm} \\ To truly capture the dynamic nature of the disease progression, it is necessary to account for the evolving information landscape and use flexible models that can adapt to this changing data ecosystem.} \\
+
+            {\textbf{Clinical history matters} \\ \vspace{0.1cm} \\ Models often overlook patient history information effectively, especially that collected in primary care. This might prove important, particularly in early stages where symptoms are not evident or laboratory results are unavailable.} \\
+    
+            {\textbf{Need for new data collection methods}  \\ \vspace{0.1cm} \\ New methods are needed to capture real-time data at different stages of the disease progression. Wearable devices and microneedles show promise for collecting granular, real-time data on vital signs and biochemical markers respectively.} \\ 
+        
+            {\textbf{Harness the potential of sequential models} \\ \vspace{0.1cm} \\ We need better data collection and integration into existing healthcare settings if we want to make better use of sequential models in areas like managing blood-related infections. } \\
+            
+            {\textbf{Need for research on early stages of disease} \\ \vspace{0.1cm} \\ Existing research mostly focuses on sepsis (the later stages of the disease) and is oriented towards the assessment of organ dysfunction rather than infection diagnosis. More efforts are needed in understanding the early stages to improve diagnosis and decision-making throughout the patient journey. Moreover, there is evidence of the significant clinical benefit of providing support at earlier stages of the disease.} \\
+            
+            {\textbf{Continual diagnostic beyond treatment } \\ \vspace{0.1cm} \\ Existing approaches are often useless after treatment is initiated. However, disease is a continuum and antimicrobial therapy is only the beginning of the diagnostic journey. Newly acquired information should be accumulated and used to confirm, refuse, or refine the previous hypothesis.} \vspace{0.15cm}
+
+    %Data Analysis	& Holistic approach	 &  A holistic approach to data analysis is important, considering all stages of the disease and the interconnectedness of various factors. \\
+    
+    %Implementation	Design for real-world use	Machine learning models should be designed for real-world use, considering factors such as the number of variables, model complexity, and transparency.\\
+    
+    %Data Collection	Need for more data	The development of effective sequential models is hampered by the lack of diverse and continuous data. \\
+    
+    %Data Collection&  	Point-of-care devices& 	Wearable devices and microneedles show promise for collecting real-time data at the point of care. \\
+    
+    %Implementation	&  Challenges & 	Implementing machine learning solutions in healthcare presents challenges such as regulatory hurdles, data privacy concerns, and the need for collaboration. \\
+    
+    %Transparency	& Importance of clear reporting	&  Clear reporting and adherence to rigorous standards are important for building trust in machine learning models in healthcare. \\
+
+            \bottomrule
+            
+        \end{tblr}
+    \end{tblr}
+\end{table*}

@@ -1,0 +1,185 @@
+\begin{table}[h!]
+    \centering
+    %\setlength{\tabcolsep}{0pt}
+    \caption{Comparison of non-sequential machine learning models.}
+    %\begin{threeparttable}
+    %\renewcommand{\arraystretch}{1.5} % Table row spacing.
+    %\fontsize{7}{8}\selectfont
+    %\rowcolors{2}{white}{gray!10}
+    %\fontsize{8}{9}\selectfont
+
+   %%%%%%%%%%%%%%%%%%%%%%%%%%
+   % Insert code (tblr)
+   %%%%%%%%%%%%%%%%%%%%%%%%%%
+   %\begin{threeparttable}
+   \begin{tblr}[
+      %caption = {},
+      %remark{}={Something noteworhty.},
+      %note{a} = {},
+      %note{} = {}
+    ]{
+      colspec={Q[c,m]
+               X[l,m]
+               Q[r,m]
+               Q[r,m]
+               Q[c,m]
+               Q[c,m]
+               Q[c,m]
+               Q[c,m]
+               Q[c,m]},
+      vline{6} = {0.05pt, dashed},
+      row{even} = {gray!10},
+      row{2} = {c1m},
+      %rowhead = 1,
+      %hlines = {2pt, white},
+      rowsep = 3pt,
+      colsep = 3pt,
+      cells = {font=\fontsize{7}{8}\linespread{1.00}\selectfont} % doesnt really work...
+    }
+    
+        %%%%%%%%%%%%%%%%%%%%%%
+        % Header             %
+        %%%%%%%%%%%%%%%%%%%%%%
+        \toprule
+          \textbf{R} & 
+          \textbf{Model} &
+          \textbf{LB} & 
+          \textbf{LA} & 
+          \textbf{FxT} & 
+          \textbf{ROC} & 
+          \textbf{PR} & 
+          \textbf{SENS} & 
+          \textbf{SPEC} \\ 
+        \midrule
+        \SetCell[c=9]{l} Non-Sequential (temporal) & & & & & & & & \\
+        %\cite{lee2019early} & \SetCell[c=8]{l} Bacteremia, 17038 (7.4\%) episodes, 18 clinical variables, All & & & & & & & \\
+        \cite{lee2019early} & \SetCell[c=8]{l} {
+            \citeauthor{lee2019early}, \citeyear{lee2019early} \\
+            Bacteremia, 17038 (7.4\%) episodes, 18 clinical variables, All 
+        } & & & & & & & \\
+        & {GNB (A) \\ RFC \\ SVM \\ MLP128 (B) \\ MLP256 (C) \\ Ensemble (A+B+C)} % LA
+        & {72h*}
+        & {0h}
+        & {20x1}
+        & {0.70 \\ 0.73 \\ 0.70 \\ 0.73 \\ 0.73 \\ 0.73}
+        & {- \\ - \\ - \\ - \\ - \\ -} 
+        & {- \\ 0.68 \\ 0.69 \\ 0.81 \\ 0.81 \\ 0.79} 
+        & {- \\ 0.66 \\ 0.55 \\ 0.59 \\ 0.53 \\ 0.57} \\ 
+
+        %\cite{pai2021artificial} & \SetCell[c=8]{l} BSI, 5030 (38\%) episodes, 28 clinical variables, ICU & & & & & & & \\
+        \cite{pai2021artificial} & \SetCell[c=8]{l} {
+            \citeauthor{pai2021artificial}, \citeyear{pai2021artificial} \\
+            BSI, 5030 (38\%) episodes, 28 clinical variables, ICU 
+        } & & & & & & & \\
+        & {XGB \\ SVM \\ MLP \\ LR} % LA
+        & {72h}
+        & {24h}
+        & {32x1}
+        & {0.82 \\ 0.70 \\ 0.67 \\ 0.66}
+        & {- \\ - \\ - \\ -} 
+        & {0.71 \\ 0.57 \\ 0.40 \\ 0.61} 
+        & {0.78 \\ 0.76 \\ 0.81 \\ 0.64} \\ 
+
+    
+        %\cite{roimi2020early} & \SetCell[c=8]{l} BSI, xxx (x\%) episodes, 28 clinical variables, All & & & & & & & \\
+        %{\cite{roimi2020early} \\ } & \SetCell[c=8]{l} {
+        %    \citeauthor{roimi2020early}, \citeyear{roimi2020early} \\
+        %     BSI, 1021 (30.4\%) patients, 40 clinical variables, ICU
+        %} & & & & & & & & \\
+        %& {} % LA
+        %& {}
+        %& {0h}
+        %& {50}
+        %& {}
+        %& {-} 
+        %& {-} 
+        %& {-} \\ 
+
+        % Seems it has been already included in thresholds.
+        %\cite{Ratzinger_2018} & \SetCell[c=8]{l} BSI, xxx (x\%) episodes, x clinical variables, All & & & & & & & \\
+        %{\cite{Ratzinger_2018} \\ } & \SetCell[c=8]{l} {
+        %    \citeauthor{Ratzinger_2018}, \citeyear{Ratzinger_2018} \\
+        %     BSI, 466 (28.8\%) patients, 21 clinical variables, All
+        %} & & & & & & & & \\
+        %& {PCT \\ RFC \\ ANN \\ ENR \\ CRP} % LA
+        %& {}
+        %& {}
+        %& {}
+        %& {0.73 \\ 0.74 \\ 0.70 \\ 0.65 \\ 0.57}
+        %& {-} 
+        %& {-} 
+        %& {-} \\ 
+        
+        %\cite{calvert2016computational} & \SetCell[c=8]{l} Sepsis-2, 1394 (11.4\%) patients, 9 clinical variables, \textcolor{red}{ICU} & & & & & & & \\
+        \cite{calvert2016computational} & \SetCell[c=8]{l} {
+            \citeauthor{calvert2016computational}, \citeyear{calvert2016computational} \\
+            Sepsis-2, 1394 (11.4\%) patients, 9 clinical variables, ICU
+        } & & & & & & & \\
+        & {InSight \\} 
+        & {5h}
+        & {3h}
+        & {\dagger}
+        & {0.92}
+        & {-}
+        & {0.90}
+        & {0.63} \\
+        
+        %\cite{Mao_2018} & \SetCell[c=8]{l} Sepsis-2, 90353 (1.3\%) patients, 6 clinical variables, \textcolor{red}{ICU} & & & & & & & \\
+        \cite{Mao_2018} & \SetCell[c=8]{l} {
+            \citeauthor{Mao_2018}, \citeyear{Mao_2018} \\
+            Sepsis-2, 90353 (1.3\%) patients, 6 clinical variables, ICU
+        } & & & & & & & \\
+        & {InSight \\ SIRS \\ SOFA } 
+        & {3h}
+        & {0h}
+        & {\dagger \\ 5 \\ 8}
+        & {0.92 \\ 0.75 \\ 0.63}
+        & {- \\ - \\ -}
+        & {0.80 \\ 0.82 \\ 0.82}
+        & {0.95 \\ 0.32 \\ 0.51} \\
+
+        %\cite{desautels2016sprediction} & \SetCell[c=8]{l} Sepsis-3, 19048 (9.7\%) patients, 8 clinical variables, ICU & & & & & & & \\
+        \cite{desautels2016sprediction} & \SetCell[c=8]{l} {
+            \citeauthor{desautels2016sprediction}, \citeyear{desautels2016sprediction} \\
+            Sepsis-3, 19048 (9.7\%) patients, 8 variables, ICU
+        } & & & & & & & \\
+        & {InSight \\ SIRS \\ SOFA \\ qSOFA \\ InSight} 
+        & {2h \\ 2h \\ 2h \\ 2h \\ 2h}
+        & {0h \\ 0h \\ 0h \\ 0h \\ 4h}
+        & {\dagger \\ 5 \\ 8 \\ 3 \\ \dagger}
+        & {0.88 \\ 0.61 \\ 0.77 \\ 0.73 \\ 0.77}
+        & {0.60 \\ 0.16 \\ 0.28 \\ 0.28 \\ 0.28}
+        & {0.80 \\ 0.72 \\ 0.80 \\ 0.56 \\ 0.80}
+        & {0.80 \\ 0.44 \\ 0.48 \\ 0.84 \\ 0.52} \\
+        
+        %\cite{bloch2019machine} & \SetCell[c=8]{l} Sepsis, 600 (50\%) episodes, 3 clinical variables, ICU & & & & & & & \\
+        \cite{bloch2019machine} & \SetCell[c=8]{l} {
+            \citeauthor{bloch2019machine}, \citeyear{bloch2019machine} \\
+            Sepsis-2, 600 (50\%) episodes, 3 variables, ICU 
+        } & & & & & & & \\
+        & {LR \\ SVM \\ ANN} 
+        & {8h}
+        & {4h}
+        & {4x1}
+        & {0.85 \\ 0.88 \\ 0.85}
+        & {- \\ - \\ -}
+        & {0.92 \\ 0.78 \\ 0.75}
+        & {0.82 \\ 0.96 \\ 0.94} \\
+
+    \bottomrule
+    \end{tblr}
+
+    \begin{tablenotes}
+        \footnotesize
+        \item \textbf{LA:} Look-ahead (h); \textbf{LB:} Look-back (h); \textbf{R:} Reference;
+        \item[] \textsuperscript{*}Further in time allowed for some specific sporadic clinical variables.
+        \item[] \textsuperscript{\textdagger} Unclear number of features due to complex feature engineering.
+    \end{tablenotes}
+    %\end{threeparttable}
+
+    %%%%%%%%%%%%%%%%%%%%%%
+    % End content (tblr)
+    %%%%%%%%%%%%%%%%%%%%%%
+    
+\label{tab:tblr-performance-ml-part2}
+\end{table}

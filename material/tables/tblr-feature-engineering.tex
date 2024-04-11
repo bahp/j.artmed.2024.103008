@@ -1,0 +1,97 @@
+\begin{table}[h!]
+    \centering
+    %\setlength{\tabcolsep}{0pt}
+    \caption{Feature engineering strategies}
+    %\begin{threeparttable}
+    %\renewcommand{\arraystretch}{1.5} % Table row spacing.
+    %\fontsize{7}{8}\selectfont
+    %\rowcolors{2}{white}{gray!10}
+    %\fontsize{8}{9}\selectfont
+
+   %%%%%%%%%%%%%%%%%%%%%%%%%%
+   % Insert code (tblr)
+   %%%%%%%%%%%%%%%%%%%%%%%%%%
+   %\begin{threeparttable}
+   \begin{tblr}[
+      caption = {asdasd},
+      %remark{}={Something noteworhty.},
+      note{z} = {tonto}
+      %note{} = {}
+    ]{
+      colspec={X
+               Q[c,m]
+               Q[c,m]
+               Q[c,m]
+               Q[c,m]
+               Q[c,m]
+               Q[c,m]},
+      %vline{6} = {0.05pt, dashed},
+      row{even} = {gray!10},
+      %row{2} = {c1m},
+      %rowhead = 1,
+      %hlines = {2pt, white},
+      rowsep = 2pt,
+      colsep = 3pt,
+      cells = {font=\fontsize{7}{8}\linespread{1.00}\selectfont}
+    } 
+    \toprule
+    \textbf{Reference} & 
+    \rotatebox{90}{\textbf{Crafted}} &
+    \rotatebox{90}{\textbf{Statistics}} & 
+    \rotatebox{90}{\textbf{Temporal}\phantom{0}} & 
+    \rotatebox{90}{\textbf{Category}} & 
+    \rotatebox{90}{\textbf{Mask}} &
+    \rotatebox{90}{\textbf{Other}} \\ 
+    \midrule
+    %\citet{HOENIGL2013225} & \checkmark & & & & & \\
+    %\citet{guillen2015predictive} & & \checkmark & & & & \\
+    %\citet{calvert2016computational} & & \checkmark & \checkmark & & & \\
+    %\citet{desautels2016sprediction} & & \checkmark & \checkmark & & & \\
+    %\citet{kam2017learning} & & \checkmark & & & & \\
+    %\citet{Mao_2018} & & & \checkmark & & & \\
+    %\citet{sheetrit2019temporal} & & \checkmark & \checkmark & & & \\
+    %\citet{barton2019evaluation} & & & \checkmark & & & \\
+    %\citet{moor2019early} & & & & & &  \\
+    %\citet{bloch2019machine} & & \checkmark & \checkmark & & & \\
+    %\citet{lee2019early} & & \checkmark & & & & \\
+    %\citet{li2020time} & & \checkmark & \checkmark & & & \\
+    %\citet{roimi2020early} & \checkmark & \checkmark & \checkmark & & \checkmark & \checkmark \\
+    %\citet{abromavivcius2020two} & & \checkmark & & & & \\
+    %\citet{boner2022deep} & \checkmark & \checkmark & & & & \\
+    %\citet{choi2022prediction} & & \checkmark & & & & \\
+    %\citet{moor2023predicting} & \checkmark & \checkmark & \checkmark & & \checkmark & \\
+
+    \cite{HOENIGL2013225} \citeauthor{HOENIGL2013225}, \citeyear{HOENIGL2013225} & \checkmark & & & & & \\
+    \cite{guillen2015predictive} \citeauthor{guillen2015predictive}, \citeyear{guillen2015predictive} & & \checkmark & & & & \\
+    \cite{calvert2016computational} \citeauthor{calvert2016computational}, \citeyear{calvert2016computational} & & \checkmark & \checkmark & & & \\
+    \cite{desautels2016sprediction} \citeauthor{desautels2016sprediction}, \citeyear{desautels2016sprediction} & & \checkmark & \checkmark & & & \\
+    \cite{kam2017learning} \citeauthor{kam2017learning}, \citeyear{kam2017learning} & & \checkmark & & & & \\
+    \cite{Mao_2018} \citeauthor{Mao_2018}, \citeyear{Mao_2018} & & & \checkmark & & & \\
+    \cite{sheetrit2019temporal} \citeauthor{sheetrit2019temporal}, \citeyear{sheetrit2019temporal} & & \checkmark & \checkmark & \checkmark & & \\
+    \cite{barton2019evaluation} \citeauthor{barton2019evaluation}, \citeyear{barton2019evaluation} & & & \checkmark & & & \\
+    %\cite{moor2019early} \citeauthor{moor2019early}, \citeyear{moor2019early} & & & & & &  \\
+    \cite{bloch2019machine} \citeauthor{bloch2019machine}, \citeyear{bloch2019machine} & & \checkmark & \checkmark & \checkmark  & & \\
+    \cite{lee2019early} \citeauthor{lee2019early}, \citeyear{lee2019early} & & \checkmark & & & & \\
+    \cite{li2020time} \citeauthor{li2020time}, \citeyear{li2020time} & & \checkmark & \checkmark & & & \\
+    \cite{roimi2020early} \citeauthor{roimi2020early}, \citeyear{roimi2020early} & \checkmark & \checkmark & \checkmark & & \checkmark & \checkmark \\
+    \cite{abromavivcius2020two} \citeauthor{abromavivcius2020two}, \citeyear{abromavivcius2020two} & & \checkmark & & & & \\
+    \cite{boner2022deep} \citeauthor{boner2022deep}, \citeyear{boner2022deep} & \checkmark & \checkmark & & & & \\
+    \cite{choi2022prediction} \citeauthor{choi2022prediction}, \citeyear{choi2022prediction} & & \checkmark & & & & \\
+    \cite{moor2023predicting} \citeauthor{moor2023predicting}, \citeyear{moor2023predicting} & \checkmark & \checkmark & \checkmark & & \checkmark & \\
+    %\cite{HOENIGL2013225} (\citeauthor{HOENIGL2013225}, \citeyear{HOENIGL2013225}) & & & & \checkmark & \\
+    %(\citeauthor{HOENIGL2013225}, \citeyear{HOENIGL2013225}) \cite{HOENIGL2013225}  & & & & \checkmark & \\
+    \bottomrule
+    \end{tblr}
+    \begin{tablenotes}
+        \footnotesize
+        \item \textbf{Crafted:} Hand-crafted features derived from medical knowledge (e.g., PaO\textsubscript{2}/FiO\textsubscript{2} ratio or the oxygenation index). \textbf{Statistics:} Time-based aggregations with statistical measures (e.g. minimum, maximum, range) or standard momentums (e.g. mean, median, standard deviations); \textbf{Temporal:} Past values of a time series (lag variables), time differences or time since last event. \textbf{Category:} Discretizing a continuous range into interval; \textbf{Mask:} Indicator to track the presence or absence of missing values \textbf{Other:} Other techniques such as extracting the coefficients of the Fourier transform;
+      
+    \end{tablenotes}
+    %\end{threeparttable}
+
+    %%%%%%%%%%%%%%%%%%%%%%
+    % End content (tblr)
+    %%%%%%%%%%%%%%%%%%%%%%
+    
+\label{tab:tblr-performance-ml-part1}
+\end{table}

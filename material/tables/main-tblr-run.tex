@@ -1,0 +1,250 @@
+\documentclass{article}
+\usepackage[margin=2.0cm]{geometry}
+\usepackage{xcolor}
+\usepackage{threeparttable}
+\usepackage{tabularray}
+\usepackage{multicol}
+\UseTblrLibrary{booktabs}
+
+\usepackage[clockwise]{rotating}
+\usepackage{colortbl}
+\usepackage{utfsym} % checkmark is: \usym{1F5F8}
+\usepackage{bbding} % checkmark is: \Checkmark
+%\usepackage{arev} % it changs the font style
+
+\usepackage{tgtermes} % font
+\usepackage{comment}
+
+\usepackage{lscape}
+% Configure bibliography
+\usepackage[numbers, super, sort&compress]{natbib}
+%\setcitestyle{numbers} %Cite as numbers or author-year.
+
+
+% --------------------------------
+% Colors
+% --------------------------------
+% Own definitions
+% Colors
+% Palette: https://coolors.co/palette/e9edc9-ccd5ae-8d9f87-71816d-cb997e-ecc7b6-ffddc2-fff1e6
+\definecolor{color1}{HTML}{E9EDC9}
+\definecolor{color2}{HTML}{CCD5AE}
+\definecolor{color3}{HTML}{8D9F87}
+\definecolor{color4}{HTML}{71816D}
+\definecolor{color5}{HTML}{CB997E}
+\definecolor{color6}{HTML}{ECC7B6}
+\definecolor{color7}{HTML}{FFDDC2}
+\definecolor{color8}{HTML}{FFF1E6}
+
+% Palette: https://coolors.co/palette/001b2e-294c60-adb6c4-d6d3cc-ffefd3-ffc49b-ffb236-ff9633
+%\definecolor{color1}{HTML}{001B2E}
+%\definecolor{color2}{HTML}{294C60}
+%\definecolor{color3}{HTML}{ADB6C4}
+%\definecolor{color4}{HTML}{D6D3CC}
+%\definecolor{color5}{HTML}{FFEFD3}
+%\definecolor{color6}{HTML}{FFC49B}
+%\definecolor{color7}{HTML}{FFB236}
+%\definecolor{color8}{HTML}{FF9633}
+
+% Define lighter color
+\colorlet{c1}{color1!30!white}
+\colorlet{c2}{color2!30!white}
+\colorlet{c3}{color3!30!white}
+\colorlet{c4}{color4!30!white}
+\colorlet{c5}{color5!30!white}
+\colorlet{c6}{color6!30!white}
+\colorlet{c7}{color7!30!white}
+\colorlet{c8}{color8!30!white}
+
+% Define dark color
+\colorlet{c1d}{color1}
+\colorlet{c2d}{color2}
+\colorlet{c3d}{color3}
+\colorlet{c4d}{color4}
+\colorlet{c5d}{color5}
+\colorlet{c6d}{color6}
+\colorlet{c7d}{color7}
+\colorlet{c8d}{color8}
+
+% Define medium dark color
+\colorlet{c1m}{color1!80!white}
+\colorlet{c2m}{color2!80!white}
+\colorlet{c3m}{color3!80!white}
+\colorlet{c4m}{color4!80!white}
+\colorlet{c5m}{color5!80!white}
+\colorlet{c6m}{color6!80!white}
+\colorlet{c7m}{color7!80!white}
+\colorlet{c8m}{color8!80!white}
+
+% Define medium light color
+\colorlet{c1h}{color1!40!white!95!gray}
+\colorlet{c2h}{color2!40!white!95!gray}
+\colorlet{c3h}{color3!40!white!95!gray}
+\colorlet{c4h}{color4!40!white!95!gray}
+\colorlet{c5h}{color5!40!white!95!gray}
+\colorlet{c6h}{color6!40!white!95!gray}
+\colorlet{c7h}{color7!40!white!95!gray}
+\colorlet{c8h}{color8!40!white!95!gray}
+
+% Define light color
+\colorlet{c1l}{color1!30!white}
+\colorlet{c2l}{color2!30!white}
+\colorlet{c3l}{color3!30!white}
+\colorlet{c4l}{color4!30!white}
+\colorlet{c5l}{color5!30!white}
+\colorlet{c6l}{color6!30!white}
+\colorlet{c7l}{color7!30!white}
+\colorlet{c8l}{color8!30!white}
+
+% ---------
+% Figure 1
+% ---------
+
+% ---------
+% Figure 2
+% ---------
+
+% ---------
+% Figure 3
+% ---------
+
+% ---------
+% Figure 4
+% ---------
+
+% ---------
+% Figure 5
+% ---------
+% Greens
+\colorlet{cf51}{color1}
+\colorlet{cf52}{color2}
+\colorlet{cf53}{color3}
+\colorlet{cf54}{color4}
+\colorlet{cf55}{color5}
+\colorlet{cf56}{color6}
+
+% Colors
+%\definecolor{cf51}{HTML}{D3EEEA}
+%\definecolor{cf52}{HTML}{FAC57D33}
+%\definecolor{cf53}{HTML}{FCE5EA}
+%\definecolor{cf54}{HTML}{9EC3E033}
+%\definecolor{cf55}{HTML}{E0F4DA}
+%\definecolor{cf56}{HTML}{EAEAEA}
+
+
+% ---------------------------------
+% Commands
+% ---------------------------------
+% Other commands
+\newcommand{\vspnote}{\\ \vspace{0.25cm}}
+
+% To easily hyde columns
+\newcolumntype{H}{>{\setbox0=\hbox\bgroup}c<{\egroup}@{}}
+\newcolumntype{P}[2]{>{\columncolor{#2}\centering\arraybackslash}p{#1}}
+%\newcolumntype{m}[1]{>{\centering\arraybackslash\columncolor{color1}}l{#1}}
+
+% Checkmark
+%\def\checkmark{\usym{1F5F8}} 
+\def\checkmark{\Checkmark}
+
+\begin{document}
+
+    \twocolumn
+
+    % ---------------------------------------------------------------
+    %                            Tables
+    % ---------------------------------------------------------------
+
+    % Manuscript: Scoring systems
+    % ---------------------------
+    \newpage
+    \onecolumn
+    \input{tblr-clinical-scoring-systems}
+
+
+    % Manuscript: Definitions
+    % ---------------------------
+    \newpage
+    \onecolumn
+    \input{tblr-clinical-sepsis-definitions}
+    
+    % Feature engineering
+    % -------------------
+    \twocolumn
+    %\input{tblr-feature-engineering}
+
+
+    % Manuscript: Conclusions
+    % -----------------------
+    \newpage
+    \onecolumn
+    %\input{tables/tblr-conclusions}
+    %\input{tables/tblr-conclusions-v2}
+    \input{tblr-conclusions-v3}
+
+
+    % Manuscript: Performance tables
+    % ------------------------------
+    \newpage
+    \twocolumn
+    %\input{tables/tblr-performance-th-v1}
+    \twocolumn
+    %\input{tables/tblr-performance-th}
+    \twocolumn
+    %\input{tables/tblr-performance-ml}
+    \twocolumn
+    \input{tblr-performance-ml-part1}
+    \twocolumn
+    \input{tblr-performance-ml-part2}
+    \twocolumn
+    \input{tblr-performance-ml-part3}
+
+
+
+    % Appendix: Clinical variables
+    % ----------------------------
+    \newpage
+    \onecolumn
+    \input{tblr-clinical-features-categories}
+
+
+    % Appendix: Performance
+    % ---------------------------
+    \newpage
+    %\input{tables/tblr-performance-ml-part1}
+    %\input{tables/tblr-performance-ml-part2}
+    %\input{tables/tblr-performance-ml-part3}
+
+    %\input{tables/tblr-performance-header}
+
+    %\newpage
+    %\onecolumn
+    %\begin{landscape}
+    %\input{tblr-performance}
+    %\end{landscape}
+    %\twocolumn
+
+
+    % Appendix: guideline
+    % ---------------------------
+    \newpage
+    \onecolumn
+    %\input{tblr-guideline}
+    \twocolumn
+
+
+
+    % ------------
+    % Bibliography
+    % ------------
+    %% Loading bibliography style file
+    \bibliographystyle{model1-num-names}
+    %\bibliographystyle{cas-model2-names}
+    %\bibliographystyle{agsm}
+    %\bibliographystyle{vancouver}
+    %\bibliographystyle{plainnat}
+    
+    % Loading bibliography database
+    \bibliography{cas-refs, bib-manual}
+
+\end{document}

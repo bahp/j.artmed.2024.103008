@@ -1,0 +1,330 @@
+%
+% Note: If using in appendix, keep only the longtblr
+% Note: If using within text, it needs some editing.
+
+%\begin{table}[bp!]
+%    \centering
+    %\setlength{\tabcolsep}{0pt}
+%    \caption{Guideline to set up a machine learning experiment in clinical domains.}
+    %\begin{threeparttable}
+    %\renewcommand{\arraystretch}{1.5} % Table row spacing.
+    %\fontsize{7}{8}\selectfont
+%    \rowcolors{2}{white}{gray!10}
+    %\fontsize{8}{9}\selectfont
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Insert code (tblr)
+    %%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{longtblr}[
+      caption = {Guideline to set up a machine learning experiment in clinical domains.},
+      label={},
+      %note{a} = {First note.},
+      %note{b} = {Second note.},
+    ]{
+      colspec={Q[l,m,0.13\textwidth]
+               Q[j,m,0.71\textwidth]
+               Q[l,m,0.03\textwidth]},
+      row{odd} = {gray!10},
+      %row{1} = {white},
+      %rowhead = 1,
+      rowsep = 5pt,
+      row{1} = {cf51},
+      row{7} = {cf52},
+      row{13} = {cf53},
+      row{23} = {cf54},
+      row{40} = {cf55},
+      row{48} = {cf56},
+      %cell{2-6}{1} = {color1!20!white},
+      %cell{8-13}{1} = {color2!20!white},
+      %cells= {font = \fontsize{5}{6}\selectfont}
+      %cells = {font=\footnotesize\linespread{0.84}\selectfont}
+      cells = {font=\fontsize{8}{9}\linespread{1.00}\selectfont}
+    }
+        %\toprule
+        %\SetCell[c=3]{c}{ \textbf{Experimental Setup Guideline} } \\ 
+    
+        %%%%%%%%%%%%%%%%%%%%%%
+        % Problem definition %
+        %%%%%%%%%%%%%%%%%%%%%%
+        \midrule    
+        \SetCell[c=3]{c}{ \textbf{Problem definition} } \\ 
+        \midrule
+            
+        {Domain \\ expertise} & 
+        Collaborate with medical professionals and domain experts to understand the \textbf{clinical context} and interpret the results. Ensure the problem is clinically meaningful, and the proposed solution aligns with medical knowledge and practices. & 
+        1.1 \\
+    
+        Dataset & 
+        {Use \textbf{publicly accessible} data and/or share your own when possible (see 6.3).  
+        \\ \\
+        \textbf{Note:} Early in the process, identify multiple datasets that correlate with the problem and consider strategies that can accommodate them if possible. This is particularly useful for validation purposes. } & 
+        1.2 \\
+    
+        {Demographic \\ characteristics} & 
+        It is often a good idea to present the demographics of the data upon completion of data cleaning (see 4.1--4.5). For integration of multiple datasets, provide both collective and individual demographics. & 
+        1.3 \\
+    
+        Gold standard & 
+        {Provide the exact definition of the \textbf{target variable}.
+        \\ \\
+        \textbf{Note:} Consider clinical standards and include code and/or pseudocode.} & 
+        1.4 \\
+    
+        Aim & 
+        Determine whether the problem is detection (diagnosis) or prediction (prognosis) and examine the context to choose the most suitable machine learning task, including options such as classification, regression, clustering or time series forecasting. & 
+        1.5 \\ 
+    
+        %%%%%%%%%%%%%%%%%%%%%%
+        % Feature selection  %
+        %%%%%%%%%%%%%%%%%%%%%%
+        \midrule
+        \SetCell[c=3]{c}{ \textbf{Feature selection}} \\ 
+        \midrule
+        
+        {Data \\ collection} & 
+        {Understanding the \textbf{clinical management pathway} is crucial for selecting features that are not only relevant but also feasible to collect (see 1.1). Consider factors like data \textbf{collection setting} (patient’s bedside, general ward or ICU), \textbf{invasiveness} of the procedure, \textbf{resources} required for transportation and laboratory analysis, and \textbf{turnaround time}. 
+        \\ \\
+        \textbf{Note:} The accuracy and reliability of the collected data need to be considered. \\
+        \textbf{Note:} Some data might be prone to measurement errors or variability.} & 
+        2.1 \\
+    
+        Relevance & 
+        {Select features that provide \textbf{meaningful information} about the problem. 
+        \\ \\
+        \textbf{Note:} Barely assessing feature importance using the outcomes of a model in your own dataset might sometimes provide spurious correlations due to the context in which the data was collected. Thus, collaborate with healthcare professionals to identify the most relevant features and investigate the literature.} & 
+        2.2 \\
+    
+        {Temporal \\ availability} & 
+        {Understand the \textbf{frequency of data availability} of your selected features.
+        \\ \\
+        \textbf{Note:} Some features are collected infrequently (e.g., x-ray), while others might be available in real-time (e.g., wearable devices). This might affect and/or limit the types of analyses you can perform (see 3.2--3.4). For instance, if you're interested in monitoring disease progression over time, you'd need features that are regularly available.}  & 
+        2.3 \\
+    
+        Quantity & 
+        {Determine the \textbf{number of features}. More features don't necessarily lead to better results. 
+        \\ \\
+        \textbf{Note:} Having too many features relative to the number of observations can lead to overfitting and reduce the generalization performance (see 4.8). This issue is denoted as the curse of dimensionality.} & 
+        2.4 \\
+    
+        {Target \\ Leakage} & 
+        Ensure that information from the target variable is not inadvertently leaked into the training process (target leakage) and no future observations are used to predict past events in time-series data. This could include using as input features data that is not available at the time of prediction (e.g., whether the patient was discharged), through data transformations (e.g., overall maximum body temperature) or hand-crafted features (e.g., length of stay or antimicrobial therapy) & 
+        2.5 \\
+        
+        %%%%%%%%%%%%%%%%%%%
+        % Model selection %
+        %%%%%%%%%%%%%%%%%%%
+        \midrule
+        \SetCell[c=3]{c}{ \textbf{Model selection} } \\ 
+        \midrule
+        
+        Nature & 
+        Understand the nature of the problem (see 1.5) to define the best approach (see 3.2--3.4). & 
+        3.1 \\
+    
+        {Statistical \\ approach} & 
+        Statistical approaches have been used for an extended period and are widely established in clinical settings. In addition, they can offer valuable insights onto potential areas of research and serve as means to evaluate the effectiveness or significance of various approaches.
+        & 
+        3.2 \\
+    
+        {Conventional \\ approach} & 
+        {Conventional machine-learning approaches refer to techniques that have been used for years and have a well-established presence in the field. In medical domains, these include logistic regression, decision trees, random forests, or support vector machines among others. 
+        \\ \\
+        \textbf{Note:} It is possible to incorporate temporal information through feature engineering including lag features, time differences, rolling statistics, time-based aggregations, time since last event, or frequency encodings among others (see 4.6).} & 
+        3.3 \\
+    
+        {Timeseries \\ approach} & 
+        {Time series data often exhibit autocorrelation, meaning the current value depends on previous values. Consider models that inherently account for time series data to capture these temporal patterns. 
+        \\ \\
+        \textbf{Note:} Consider models like ARIMA, LSTM, GRU, or Transformers. \\
+        \textbf{Note:} Consider elements such as seasonality and trends. \\
+        \textbf{Note:} In the experimental setup, define clearly look-back and look-ahead. \\
+        \textbf{Note:} In the model evaluation consider performance at different time horizons. \\
+        \textbf{Note:} Be careful with time leakage!} & 
+        3.4 \\
+    
+        Ensemble & 
+        {Ensemble methods can provide robust performance by combining multiple models at the expense of heightened complexity (see 3.6) and resources. Employing them might not be advisable for simple problems, limited resources, or interpretability requirements. 
+        \\ \\
+        \textbf{Note:} Be careful with the strategy used. Standard methods like Random Forests or Gradient Boosting might work well. Manual methods combining different models trained on different sets and using the worst outcome might be impracticable. }& 
+        3.5 \\
+    
+        Complexity & 
+        {Complex algorithms don't necessarily lead to better results. Adjust the complexity requirements by considering factors such as the number of observations, feature space, interpretability, and maintenance capacity among others. 
+        \\ \\
+        \textbf{Note:} Simple models often generalize better with limited data.} 
+        & 
+        3.6 \\
+
+        %Highly intricate models incorporating numerous variables exhibited minimal performance advantage and a significant decline when assessed on the hold-out set in contrast to the utilization of clinical scores based on only three to five collectible parameters [R].
+    
+        Interpretability & Interpretability is crucial for gaining trust and understanding model decisions. For this reason, model that are easy to understand (e.g. clinical scores) and/or models that provide explainable outputs (e.g. decision trees or rule-based systems) have often seen better adoption in healthcare settings. & 
+        3.7 \\
+    
+        Adoption & Simplicity is often preferred for interpretability reasons. & 
+        3.8 \\
+    
+        Adaptation & Ensure that your selected model can be easily maintained and adapted as new data becomes available. For example, for time series analysis, exponential smoothing or ARIMA often require less frequent retraining compared to complex neural networks. & 
+        3.9 \\
+      
+        %%%%%%%%%%%%%%%%%%%%%%
+        % Experimental setup %
+        %%%%%%%%%%%%%%%%%%%%%%
+        \midrule
+        \SetCell[c=3]{c}{ \textbf{Experimental setup} } \\ 
+        \midrule
+        
+        Data preprocessing & 
+        {Ensure the quality and relevance of your dataset. When discarding features and/or observations, \textbf{consider data cleaning} aspects such as domain knowledge, irrelevant features, missingness, duplicate records, data collection errors, temporal relevance, or noise \textbf{and the study design requirements} such as inclusion criteria, condition on admission, length of stay or time of onset. 
+        \\ \\
+        \textbf{Note:} Provide a study design flowchart with filtering steps!} & 
+        4.1 \\
+    
+        {Outlier \\ removal} & 
+        {Exclude data points that significantly deviate from the typical pattern.
+        \\ \\
+        \textbf{Note:} In the medical field, consider plausible physiological ranges.} &
+        4.2 \\
+    
+        {Imbalance \\ classes} & 
+        Acknowledge and/or address class imbalance if present, as skewed class distribution can affect model performance. Consider techniques like random oversampling, random under-sampling or weighted loss and use appropriate metrics for performance evaluation (see 4.11). & 
+        4.3 \\
+    
+        Imputation & 
+        {Consider imputation methods such as mean or median for numeric values, mode for categorical data, multiple imputation, k-nearest neighbors, or forward/backward fill for time series data. 
+        \\ \\
+        \textbf{Note:} Consider imputation methods that are feasible to implement in real life. \\
+        \textbf{Note:} Understand the different underlying patterns of missing data. \\
+        \textbf{Note:} Missing data can introduce biases and distort results. Ensure the model is learning the disease dynamics rather than just memorizing missing patterns within clinical data, which are often related to clinical judgment.} & 
+        4.4 \\
+    
+        Scaling & 
+        {Ensure scaling needs are met, which are especially important when features are skewed. Consider the characteristics of your data and the algorithm’s requirements before deciding whether and how to scale the features.
+        \\ \\
+        \textbf{Note:} Ensure consistent units within the data! \\
+        \textbf{Note:} Some algorithms do not need scaling (e.g., decision trees). \\
+        \textbf{Note:} Scaling ensures that all features contribute equally and improves convergence. \\
+        \textbf{Note:} Ensure the same scaling is applied on training, testing, and external datasets. \\
+        \textbf{Note:} Fitting the scaling equation to an specific dataset might not work well in others. This is particularly true when dealing with small datasets that do not encompass the entire feature domain or when significant outliers have not been discarded. In medicine, it is possible to use established feasible physiological ranges to define the scaling equation and ensure consistency.}  & 
+        4.5 \\
+    
+        Feature engineering & 
+        {Generate new relevant features using \textbf{domain knowledge} (handcrafted), statistical \textbf{measures} (min, max, range), statistical \textbf{momentums} (mean, median, std), \textbf{temporal information} extracted through time differences (delta), rolling statistics, time since last event, frequency encodings like the Discrete Fourier Transform (DFT) or consider more complex abstractions. Similarly, consider \textbf{dimensionality reduction} to condense complex data while retaining essential information or \textbf{indicator variables} to provide information about missing values.
+        \\ \\
+        \textbf{Note:} In general, having too many input features in relation to the number of observations leads to larger proportion of missing data (see 4.4), overfitting, and poses significant impracticalities for implementation (see 5.2).} & 
+        4.6 \\
+    
+        Data splitting & 
+        {Split the dataset into \textbf{training}, \textbf{validation}, and \textbf{testing} sets to assess model performance accurately. Implement cross-validation to evaluate model generalization ability. Consider the use of \textbf{time-aware data splits} to assess model performance over time and evaluate model decay.
+        \\ \\
+        \textbf{Note:} Set the random seed for repeatability!} & 
+        4.7 \\
+    
+        Reporting data accurately & Report only data used for training and testing (after cleaning)
+        Ensure is relevant and representative of the target population & 
+        4.8 \\
+    
+        Regularization and Normalization & Apply techniques like dropout, L1/L2 regularization, and early stopping to prevent overfitting to ensure that the model can generalize well to unseen data. & 
+        4.9 \\
+    
+        Hyper-parameter tunning & Use automated methods to \textbf{systematically search} for the optimal configuration parameters of the model. Consider techniques such as grid search, random search, or Bayesian optimization. & 
+        4.10 \\
+    
+        Performance evaluation & 
+        {Choose multiple evaluation metrics and the context of the problem before drawing conclusions. Consider domain-specific metrics that reflect the clinical relevance of the predictions.
+        \\ \\
+        \textbf{Note:} If class imbalance avoid accuracy and include AUCPR. \\
+        \textbf{Note:} Instead of merely presenting fundamental metrics, it is preferable to furnish a file containing metadata, relevant patient characteristics, the gold standard or target variable, and associated outcomes (e.g., probabilities). This allows for the investigation of diverse performance metrics and supplementary analysis in subsequent stages (see 4.12).} & 
+        4.11 \\
+    
+        Feature importance & 
+        Study your feature importance. Don’t just accept it but challenge it! & 
+        4.12 \\
+    
+        Further Analysis & 
+        {Understand the strengths and weaknesses of the model. Evaluate the performance for different probability cut-off thresholds, diverse subgroups based on gender, age, ethnicity, hospital ward or date among others, different levels of missing data, and various prevalence levels. For time series consider different historical data requirements (look-back) and prediction horizons (look-ahead).
+        \\ \\
+        \textbf{Note:} It is highly dependent on the context.  \\
+        \textbf{Note:} Fairness, bias, and ethical considerations are crucial when analysing model performance across different subgroups. Unintended biases can lead to discriminatory outcomes and should be thoroughly addressed.} & 
+        4.13 \\
+    
+        Probability calibration & 
+        Consider aspects such as probability calibration to adjust probabilities to better reflect the true likelihood of an event and/or study its relationship with other hard outcomes such as mortality. & 
+        4.14 \\
+    
+        External validation & 
+        Assess the reliability and generalizability of the model performance in different scenarios. Consider data sourced from independent and publicly available datasets and uncover potential biases or limitations that might not have surfaced during the training and internal validation phase. & 
+        4.15 \\
+    
+        Prospective validation & 
+        Validate the model's performance in real clinical settings with prospective data. Compare model predictions with ground truth and assess its impact on patient outcomes. & 
+        4.16 \\
+      
+        %%%%%%%%%%%%%%%%%%%%%%
+        % Deployment %
+        %%%%%%%%%%%%%%%%%%%%%%
+        \midrule
+        \SetCell[c=3]{c}{ \textbf{Deployment} } \\ 
+        \midrule  
+    
+        Legal and regulatory compliance & 
+        Comply with relevant medical device regulations and obtain necessary approvals before deploying the model in a clinical setting. & 
+        5.1  \\
+    
+        Resource requirements & 
+        Evaluate computational resources, time commitments, and personnel needs for model development, training, and ongoing maintenance. & 
+        5.2 \\
+    
+        Communication and transparency & 
+        Clearly communicate the model's limitations, uncertainties, and risks to clinicians and patients. Maintain transparency about the model's inner workings. & 
+        5.3 \\
+    
+        Feedback loop & Establish a mechanism for receiving feedback from healthcare practitioners and patients to adjust and enhance the model's performance over time. & 
+        5.4 \\
+    
+        Deployment and integration & 
+        Implement the model into healthcare workflows, considering integration with the electronic health record (EHR), the existing data flow and the development of user interfaces and their impact on human behaviour and decision-making.
+        & 
+        5.5 \\
+    
+        Continuous monitoring and updates & Healthcare data and best practices evolve, so ensure a process for continuous monitoring and updating of the model to maintain accuracy and relevance. & 
+        5.6 \\
+    
+        Patient diversity and bias & Ensure that the model performs well across different patient demographics, minimizing bias and health disparities. & 
+        5.7 \\
+    
+        %%%%%%%%%%%%%%%%%%%%%%
+        % Miscellaneous      %
+        %%%%%%%%%%%%%%%%%%%%%%
+        \midrule
+        \SetCell[c=3]{c}{ \textbf{Miscellaneous} } \\ 
+        \midrule  
+    
+        %Reporting &  & 
+        %6.1 \\
+    
+        Cost-sensitivity analysis & 
+        Sometimes, the consequences of false positives and false negatives are quantified in monetary terms or other measures. In such cases, you can perform a cost-sensitive analysis to find the threshold that minimizes the total cost. & 
+        6.1 \\
+    
+        Data availability & 
+        When possible, consider sharing your own data, ensuring alignment with global data protection regulations through data repositories (e.g., Harvard Dataverse, PhysioNet, Zenodo, Hugging Face, …). & 
+        6.2 \\
+    
+        Code availability & 
+        Share your code to promote transparency, collaboration, and reproducibility. Consider public code repositories (e.g., GitHub). & 
+        6.3 \\
+    
+        Model availability & Provide the pre-trained model and/or the weights for reproducibility.  & 
+        6.4 \\
+    
+        Demo & Provide easy-to-use demos to make your research more visible and accessible.  & 
+        6.5 \\
+    
+    \bottomrule
+    \end{longtblr}
+   %%%%%%%%%%%%%%%%%%%%%%%%%%
+   % end (tblr)
+   %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\label{tab:guideline}
+%\end{table}
