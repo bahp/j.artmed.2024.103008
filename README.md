@@ -94,16 +94,19 @@ follow the instructions in the [Documentation](docs/README.md).
 repository
     |- manuscript
     |- material
-        |- appendix-01
-            |- clinical variables
-        |- appendix-02
-            |- Experimental setup
-        |- appendix-03
-            |- Performance summary
         |- figures
-            |-
+            |- Figure_1_organ_systems.pdf             
+            |- Figure_2_sources_timeline_events.pdf
+            |- Figure_3_graphical_definitions.pdf
+            |- Figure_4_model_validation_strategies.pdf
+            |- Figure_5_experimental_setup.pdf
         |- tables
-            |-
+            |- tblr-clinical-features-categories.tex
+            |- tblr-clinical-scoring-systems.tex
+            |- tblr-clinical-sepsis-definitions.tex
+            |- ...
+        |- main-tblr-run.tex              // document with tables included
+        |- supplementary-material.xlsx    // excel file with articles specs
     |- LICENSE
 ```
 
