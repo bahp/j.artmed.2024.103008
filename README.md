@@ -87,8 +87,7 @@ If you find it useful, please cite the original article:
 
 ### Getting Started
 
-To get started with the deep learning model and replicate the experiments described in the article, please 
-follow the instructions in the [Documentation](docs/README.md).
+To get started, this is the structure of the repository: 
 
 ```
 repository
