@@ -1,14 +1,25 @@
 # Libraries
 import pandas as pd 
 import matplotlib.pyplot as plt
-from pathlib import Path
 
-path = '../material/supplementary-material.xlsx'
+from pathlib import Path
+from matplotlib import patheffects
+
+# Enable XKCD mode (hand drawn style)
+plt.xkcd()
+
+# Set fallback font manually
+plt.rcParams.update({
+    'font.family': 'Comic Sans MS, DejaVu Sans, sans-serif'
+})
 
 
 # ---------------------
 # Load data
 # ---------------------
+# Path
+path = '../material/supplementary-material.xlsx'
+
 # Load data
 df = pd.read_excel(io=path, 
 	sheet_name='STUDIES', engine='openpyxl',
@@ -85,67 +96,9 @@ plt.ylabel('Total Count')
 plt.legend(title='Categories')
 
 # Show plot
-plt.xticks(rotation=90)  # Keep x-axis labels horizontal
-plt.tight_layout()       # Adjust layout to make room for labels
+plt.xticks(rotation=90)  
+plt.tight_layout()       
 plt.savefig("%s.png" % Path(__file__).stem, dpi=300)
-
-
-# ----------------------------
-# From tags column
-# ----------------------------
-
-REMOVE = [
-	'timeseries', 'arxiv', 'Predictors', 'PhD', 
-	'TEST', 'NLP', 'SERA', 'MGP', 'TPF', 'ENR'
-]
-
-groups1 = {
-    'STATIC': [
-    	'RFC', 'LGBM', 'DTC', 'LGBM', 'XGB', 
-    	'Insight', 'LSVM', 'LR', 'SVM', 'GNB', 'RLR'
-    ],
-    'TS_NOSEQ': ['ANN', 'DFN', 'CNN', 'MLP', 'FNN'],
-    'TS_SEQ': ['GRU', 'LSTM', 'RNN'],
-    'RULE': ['PCT', 'PSEP', 'Rule']
-}
-
-
-
-# Function to assign group names based on the value
-def assign_group(value, groups):
-    for group_name, group_values in groups.items():
-        if value in group_values:
-            return group_name
-    return value
-    return 'Other'  # Default group if not found
-
-
-# Step 1: Format and explode
-df.tags = df.tags.str.replace(r'\s+', '', regex=True) \
-	.str.replace('|', ',', regex=False) \
-	.str.split(",").explode('tags') 
-
-# Step 2: Remove not useful tags
-df = df[~df.tags.isin(REMOVE)]
-
-# Step 3: Group
-df['group'] = df.tags.apply(assign_group, args=(groups,))
-
-# ---------------------
-# Display pandas
-# ---------------------
-# Group by 'Year' and 'Type' and count occurrences
-df_counts = df.groupby(['year', 'group']).size().unstack(fill_value=0)
-
-# Create stacked bar plot
-df_counts.plot(kind='bar', stacked=True)
-
-# Add labels and title
-plt.xlabel('Year')
-plt.ylabel('Count')
-plt.title('Number of manuscripts (by model/approach) over the years')
-plt.legend(title='Type')
-plt.xticks(rotation=90)  # Rotate x-axis labels if needed
 
 # Show plot
 plt.show()
