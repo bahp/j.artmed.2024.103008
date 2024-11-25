@@ -31,7 +31,7 @@ by *[Bernard Hernandez](https://bahp.github.io/portfolio-academic/),
 - *Imperial College Healthcare NHS Trust, Praed Street, W2 1NY, UK*
 - *Department of Global Health and Infectious Diseases, University of Liverpool, UK*
 
-This [article]() has been submitted for publication in *"xxxxl"*.
+This [article]() has been submitted for publication in *"Artificial Intelligence in Medicine"*.
 
 >The objective is to consistently update this repository with fresh articles (see ["Submit a new entry"](#Submit-a-new-entry))
 
