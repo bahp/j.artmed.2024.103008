@@ -1,4 +1,4 @@
-# bahp-bbs-review
+# j.artmed.2024.103008
 
 [badge-type]: https://img.shields.io/badge/Publication%20type-Living%20Review-purple.svg
 
