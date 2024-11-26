@@ -75,12 +75,16 @@ we'll gladly include them. Explore the following options:
 If you find it useful, please cite the original article:
 
 ```
-@article{
-    title=
-    authors=
-    journal=
-    year=
-}    
+@article{B2024103008,
+    title = {Advances in diagnosis and prognosis of bacteraemia, bloodstream infection, and sepsis using machine learning: A comprehensive living literature review},
+    author = {Hernandez B. and Ming D.K. and Rawson T.M. and Bolton W. and Wilson R. and Vasikasin V. and Daniels J. and Rodriguez-Manzano J. and Davies F.J. and Georgiou P. and Holmes A.H.},
+    journal = {Artificial Intelligence in Medicine},
+    pages = {103008},
+    year = {2024},
+    issn = {0933-3657},
+    doi = {https://doi.org/10.1016/j.artmed.2024.103008},
+    url = {https://www.sciencedirect.com/science/article/pii/S0933365724002501}
+}
 ```
 
 <!-- [Link to the Article](https://example.com/article) -->
